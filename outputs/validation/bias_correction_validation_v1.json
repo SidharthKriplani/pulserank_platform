@@ -1,0 +1,463 @@
+{
+  "artifact": "pulserank_bias_correction_validation_v1",
+  "status": "pass",
+  "check_count": 34,
+  "passed_count": 34,
+  "checks": [
+    {
+      "name": "exists::data/processed/ips_training_examples.csv",
+      "passed": true,
+      "observed": "data/processed/ips_training_examples.csv"
+    },
+    {
+      "name": "exists::outputs/evidence/propensity_by_rank_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/propensity_by_rank_report.json"
+    },
+    {
+      "name": "exists::outputs/evidence/bias_correction_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/bias_correction_report.json"
+    },
+    {
+      "name": "exists::outputs/reports/group4_bias_correction_report_v1.json",
+      "passed": true,
+      "observed": "outputs/reports/group4_bias_correction_report_v1.json"
+    },
+    {
+      "name": "ips_rows_positive",
+      "passed": true,
+      "observed": 41320
+    },
+    {
+      "name": "ips_rows_equal_impressions",
+      "passed": true,
+      "observed": {
+        "ips_rows": 41320,
+        "impressions": 41320
+      }
+    },
+    {
+      "name": "column_exists::impression_id",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "split",
+        "clicked",
+        "added_to_cart",
+        "attributed_purchase",
+        "attributed_revenue",
+        "empirical_propensity",
+        "clipped_propensity",
+        "ips_weight",
+        "propensity_was_clipped"
+      ]
+    },
+    {
+      "name": "column_exists::session_id",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "split",
+        "clicked",
+        "added_to_cart",
+        "attributed_purchase",
+        "attributed_revenue",
+        "empirical_propensity",
+        "clipped_propensity",
+        "ips_weight",
+        "propensity_was_clipped"
+      ]
+    },
+    {
+      "name": "column_exists::item_id",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "split",
+        "clicked",
+        "added_to_cart",
+        "attributed_purchase",
+        "attributed_revenue",
+        "empirical_propensity",
+        "clipped_propensity",
+        "ips_weight",
+        "propensity_was_clipped"
+      ]
+    },
+    {
+      "name": "column_exists::display_rank",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "split",
+        "clicked",
+        "added_to_cart",
+        "attributed_purchase",
+        "attributed_revenue",
+        "empirical_propensity",
+        "clipped_propensity",
+        "ips_weight",
+        "propensity_was_clipped"
+      ]
+    },
+    {
+      "name": "column_exists::split",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "split",
+        "clicked",
+        "added_to_cart",
+        "attributed_purchase",
+        "attributed_revenue",
+        "empirical_propensity",
+        "clipped_propensity",
+        "ips_weight",
+        "propensity_was_clipped"
+      ]
+    },
+    {
+      "name": "column_exists::clicked",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "split",
+        "clicked",
+        "added_to_cart",
+        "attributed_purchase",
+        "attributed_revenue",
+        "empirical_propensity",
+        "clipped_propensity",
+        "ips_weight",
+        "propensity_was_clipped"
+      ]
+    },
+    {
+      "name": "column_exists::attributed_purchase",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "split",
+        "clicked",
+        "added_to_cart",
+        "attributed_purchase",
+        "attributed_revenue",
+        "empirical_propensity",
+        "clipped_propensity",
+        "ips_weight",
+        "propensity_was_clipped"
+      ]
+    },
+    {
+      "name": "column_exists::empirical_propensity",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "split",
+        "clicked",
+        "added_to_cart",
+        "attributed_purchase",
+        "attributed_revenue",
+        "empirical_propensity",
+        "clipped_propensity",
+        "ips_weight",
+        "propensity_was_clipped"
+      ]
+    },
+    {
+      "name": "column_exists::clipped_propensity",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "split",
+        "clicked",
+        "added_to_cart",
+        "attributed_purchase",
+        "attributed_revenue",
+        "empirical_propensity",
+        "clipped_propensity",
+        "ips_weight",
+        "propensity_was_clipped"
+      ]
+    },
+    {
+      "name": "column_exists::ips_weight",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "split",
+        "clicked",
+        "added_to_cart",
+        "attributed_purchase",
+        "attributed_revenue",
+        "empirical_propensity",
+        "clipped_propensity",
+        "ips_weight",
+        "propensity_was_clipped"
+      ]
+    },
+    {
+      "name": "column_exists::propensity_was_clipped",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "split",
+        "clicked",
+        "added_to_cart",
+        "attributed_purchase",
+        "attributed_revenue",
+        "empirical_propensity",
+        "clipped_propensity",
+        "ips_weight",
+        "propensity_was_clipped"
+      ]
+    },
+    {
+      "name": "display_rank_range_1_10",
+      "passed": true,
+      "observed": {
+        "min": 1,
+        "max": 10
+      }
+    },
+    {
+      "name": "ips_weight_positive",
+      "passed": true,
+      "observed": {
+        "min": 5.54545455,
+        "max": 22.26984127
+      }
+    },
+    {
+      "name": "has_train_and_holdout",
+      "passed": true,
+      "observed": [
+        "holdout",
+        "train"
+      ]
+    },
+    {
+      "name": "propensity_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "propensity_floor_001",
+      "passed": true,
+      "observed": 0.01
+    },
+    {
+      "name": "propensity_has_10_ranks",
+      "passed": true,
+      "observed": 10
+    },
+    {
+      "name": "propensity_ranks_1_to_10",
+      "passed": true,
+      "observed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "name": "propensity_clicks_nonzero",
+      "passed": true,
+      "observed": 2672
+    },
+    {
+      "name": "propensity_weights_positive",
+      "passed": true,
+      "observed": [
+        {
+          "display_rank": 1,
+          "impressions": 2806,
+          "clicks": 506,
+          "empirical_propensity": 0.18032787,
+          "clipped_propensity": 0.18032787,
+          "ips_weight": 5.54545455,
+          "was_clipped": false
+        },
+        {
+          "display_rank": 2,
+          "impressions": 2806,
+          "clicks": 439,
+          "empirical_propensity": 0.15645046,
+          "clipped_propensity": 0.15645046,
+          "ips_weight": 6.39179954,
+          "was_clipped": false
+        },
+        {
+          "display_rank": 3,
+          "impressions": 2806,
+          "clicks": 372,
+          "empirical_propensity": 0.13257306,
+          "clipped_propensity": 0.13257306,
+          "ips_weight": 7.54301075,
+          "was_clipped": false
+        },
+        {
+          "display_rank": 4,
+          "impressions": 2806,
+          "clicks": 312,
+          "empirical_propensity": 0.11119031,
+          "clipped_propensity": 0.11119031,
+          "ips_weight": 8.99358974,
+          "was_clipped": false
+        },
+        {
+          "display_rank": 5,
+          "impressions": 2806,
+          "clicks": 259,
+          "empirical_propensity": 0.09230221,
+          "clipped_propensity": 0.09230221,
+          "ips_weight": 10.83397683,
+          "was_clipped": false
+        },
+        {
+          "display_rank": 6,
+          "impressions": 2806,
+          "clicks": 195,
+          "empirical_propensity": 0.06949394,
+          "clipped_propensity": 0.06949394,
+          "ips_weight": 14.38974359,
+          "was_clipped": false
+        },
+        {
+          "display_rank": 7,
+          "impressions": 2806,
+          "clicks": 186,
+          "empirical_propensity": 0.06628653,
+          "clipped_propensity": 0.06628653,
+          "ips_weight": 15.08602151,
+          "was_clipped": false
+        },
+        {
+          "display_rank": 8,
+          "impressions": 2806,
+          "clicks": 147,
+          "empirical_propensity": 0.05238774,
+          "clipped_propensity": 0.05238774,
+          "ips_weight": 19.08843537,
+          "was_clipped": false
+        },
+        {
+          "display_rank": 9,
+          "impressions": 2806,
+          "clicks": 126,
+          "empirical_propensity": 0.04490378,
+          "clipped_propensity": 0.04490378,
+          "ips_weight": 22.26984127,
+          "was_clipped": false
+        },
+        {
+          "display_rank": 10,
+          "impressions": 2806,
+          "clicks": 130,
+          "empirical_propensity": 0.04632929,
+          "clipped_propensity": 0.04632929,
+          "ips_weight": 21.58461538,
+          "was_clipped": false
+        }
+      ]
+    },
+    {
+      "name": "bias_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "bias_method_ips",
+      "passed": true,
+      "observed": "inverse_propensity_scoring"
+    },
+    {
+      "name": "bias_has_raw_ndcg",
+      "passed": true,
+      "observed": 0.52751
+    },
+    {
+      "name": "bias_has_ips_ndcg",
+      "passed": true,
+      "observed": 0.52224
+    },
+    {
+      "name": "bias_has_delta",
+      "passed": true,
+      "observed": -0.00527
+    },
+    {
+      "name": "bias_evaluated_sessions_positive",
+      "passed": true,
+      "observed": 139
+    },
+    {
+      "name": "bias_has_assumption_limitations",
+      "passed": true,
+      "observed": [
+        "Uses rank-level empirical click propensity rather than a full cascade/examination model.",
+        "Synthetic corpus approximates position bias but does not represent live marketplace traffic.",
+        "IPS weighting controls for display-rank confounding but can increase variance when propensities are small.",
+        "Propensity clipping is used to control variance."
+      ]
+    },
+    {
+      "name": "group_status_pass",
+      "passed": true,
+      "observed": "pass"
+    }
+  ],
+  "evidence_statement": "Validates Group 4 IPS position-bias correction, propensity-by-rank report, clipped weights, and raw vs IPS-weighted NDCG evidence."
+}

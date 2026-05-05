@@ -1,0 +1,28 @@
+{
+  "artifact": "pulserank_bias_correction_report_v1",
+  "status": "pass",
+  "method": "inverse_propensity_scoring",
+  "position_bias_problem": "Logged clicks are position-confounded because top-ranked items receive higher examination probability independent of item quality.",
+  "propensity_estimation": "Empirical train-period click rate by display_rank.",
+  "propensity_clip_threshold": 0.01,
+  "train_impressions": 28060,
+  "holdout_impressions": 13260,
+  "ips_examples_written": 41320,
+  "evaluated_holdout_purchase_sessions": 139,
+  "raw_ndcg_at_10": 0.52751,
+  "ips_weighted_ndcg_at_10": 0.52224,
+  "bias_delta_ips_minus_raw": -0.00527,
+  "weight_distribution": {
+    "min_weight": 5.54545,
+    "max_weight": 22.26984,
+    "mean_weight": 13.17265,
+    "clip_rate": 0.0
+  },
+  "assumption_limitations": [
+    "Uses rank-level empirical click propensity rather than a full cascade/examination model.",
+    "Synthetic corpus approximates position bias but does not represent live marketplace traffic.",
+    "IPS weighting controls for display-rank confounding but can increase variance when propensities are small.",
+    "Propensity clipping is used to control variance."
+  ],
+  "evidence_statement": "Implements IPS position-bias correction with propensity estimation, clipping, training-example weights, and raw vs. IPS-weighted NDCG comparison."
+}

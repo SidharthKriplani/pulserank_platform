@@ -1,0 +1,8 @@
+{
+  "artifact": "pulserank_group4_bias_correction_report_v1",
+  "status": "pass",
+  "ips_training_examples_path": "data/processed/ips_training_examples.csv",
+  "propensity_report_path": "outputs/evidence/propensity_by_rank_report.json",
+  "bias_report_path": "outputs/evidence/bias_correction_report.json",
+  "evidence_statement": "Group 4 IPS bias correction complete with display-rank propensity estimation and before/after ranking evaluation."
+}

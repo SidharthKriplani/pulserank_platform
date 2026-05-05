@@ -1,0 +1,101 @@
+{
+  "artifact": "pulserank_propensity_by_rank_report_v1",
+  "status": "pass",
+  "propensity_floor": 0.01,
+  "estimated_on": "train_impressions_days_1_to_60",
+  "max_rank": 10,
+  "rank_propensity_monotonicity_score": 0.88889,
+  "propensity_by_rank": [
+    {
+      "display_rank": 1,
+      "impressions": 2806,
+      "clicks": 506,
+      "empirical_propensity": 0.18032787,
+      "clipped_propensity": 0.18032787,
+      "ips_weight": 5.54545455,
+      "was_clipped": false
+    },
+    {
+      "display_rank": 2,
+      "impressions": 2806,
+      "clicks": 439,
+      "empirical_propensity": 0.15645046,
+      "clipped_propensity": 0.15645046,
+      "ips_weight": 6.39179954,
+      "was_clipped": false
+    },
+    {
+      "display_rank": 3,
+      "impressions": 2806,
+      "clicks": 372,
+      "empirical_propensity": 0.13257306,
+      "clipped_propensity": 0.13257306,
+      "ips_weight": 7.54301075,
+      "was_clipped": false
+    },
+    {
+      "display_rank": 4,
+      "impressions": 2806,
+      "clicks": 312,
+      "empirical_propensity": 0.11119031,
+      "clipped_propensity": 0.11119031,
+      "ips_weight": 8.99358974,
+      "was_clipped": false
+    },
+    {
+      "display_rank": 5,
+      "impressions": 2806,
+      "clicks": 259,
+      "empirical_propensity": 0.09230221,
+      "clipped_propensity": 0.09230221,
+      "ips_weight": 10.83397683,
+      "was_clipped": false
+    },
+    {
+      "display_rank": 6,
+      "impressions": 2806,
+      "clicks": 195,
+      "empirical_propensity": 0.06949394,
+      "clipped_propensity": 0.06949394,
+      "ips_weight": 14.38974359,
+      "was_clipped": false
+    },
+    {
+      "display_rank": 7,
+      "impressions": 2806,
+      "clicks": 186,
+      "empirical_propensity": 0.06628653,
+      "clipped_propensity": 0.06628653,
+      "ips_weight": 15.08602151,
+      "was_clipped": false
+    },
+    {
+      "display_rank": 8,
+      "impressions": 2806,
+      "clicks": 147,
+      "empirical_propensity": 0.05238774,
+      "clipped_propensity": 0.05238774,
+      "ips_weight": 19.08843537,
+      "was_clipped": false
+    },
+    {
+      "display_rank": 9,
+      "impressions": 2806,
+      "clicks": 126,
+      "empirical_propensity": 0.04490378,
+      "clipped_propensity": 0.04490378,
+      "ips_weight": 22.26984127,
+      "was_clipped": false
+    },
+    {
+      "display_rank": 10,
+      "impressions": 2806,
+      "clicks": 130,
+      "empirical_propensity": 0.04632929,
+      "clipped_propensity": 0.04632929,
+      "ips_weight": 21.58461538,
+      "was_clipped": false
+    }
+  ],
+  "evidence_statement": "Estimates examination/click propensity by display_rank from train-period logged impressions."
+}
