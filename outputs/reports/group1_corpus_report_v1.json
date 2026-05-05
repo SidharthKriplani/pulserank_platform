@@ -1,0 +1,17 @@
+{
+  "artifact": "pulserank_group1_corpus_report_v1",
+  "status": "pass",
+  "summary_path": "outputs/evidence/corpus_summary.json",
+  "schema_manifest_path": "outputs/evidence/schema_manifest.json",
+  "sample_path": "outputs/evidence/corpus_samples.json",
+  "data_paths": {
+    "user_sessions": "data/processed/user_sessions.csv",
+    "item_catalog": "data/processed/item_catalog.csv",
+    "impression_log": "data/processed/impression_log.csv",
+    "purchase_log": "data/processed/purchase_log.csv",
+    "attributed_label_log": "data/processed/attributed_label_log.csv",
+    "exploration_log": "data/processed/exploration_log.csv",
+    "cold_start_events": "data/processed/cold_start_events.csv"
+  },
+  "evidence_statement": "Group 1 corpus generation complete. Data files are reproducible locally and evidence summaries are committed."
+}

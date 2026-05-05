@@ -1,0 +1,410 @@
+{
+  "artifact": "pulserank_corpus_samples_v1",
+  "status": "pass",
+  "samples": {
+    "user_sessions": [
+      {
+        "session_id": "SESS0000001",
+        "user_id": "U00620",
+        "timestamp_start": "2026-01-01T15:24:00",
+        "timestamp_end": "2026-01-01T15:39:00",
+        "device_type": "mobile",
+        "num_events": 10,
+        "category_affinity": "{\"electronics\": 0.1185, \"fashion\": 0.2818, \"home\": 0.1404, \"beauty\": 0.0853, \"sports\": 0.1349, \"baby\": 0.0274, \"books\": 0.0771, \"grocery\": 0.6357}",
+        "price_sensitivity_bucket": "budget",
+        "simulated_day": 1
+      },
+      {
+        "session_id": "SESS0000002",
+        "user_id": "U00544",
+        "timestamp_start": "2026-01-01T17:54:00",
+        "timestamp_end": "2026-01-01T18:18:00",
+        "device_type": "desktop",
+        "num_events": 10,
+        "category_affinity": "{\"electronics\": 0.7069, \"fashion\": 0.0657, \"home\": 0.1626, \"beauty\": 0.1221, \"sports\": 0.1652, \"baby\": 0.127, \"books\": 0.3981, \"grocery\": 0.1645}",
+        "price_sensitivity_bucket": "mid",
+        "simulated_day": 1
+      },
+      {
+        "session_id": "SESS0000003",
+        "user_id": "U00376",
+        "timestamp_start": "2026-01-01T20:09:00",
+        "timestamp_end": "2026-01-01T20:46:00",
+        "device_type": "mobile",
+        "num_events": 10,
+        "category_affinity": "{\"electronics\": 0.1619, \"fashion\": 0.1403, \"home\": 0.1362, \"beauty\": 0.1139, \"sports\": 0.6706, \"baby\": 0.1639, \"books\": 0.0817, \"grocery\": 0.3498}",
+        "price_sensitivity_bucket": "mid",
+        "simulated_day": 1
+      },
+      {
+        "session_id": "SESS0000004",
+        "user_id": "U00828",
+        "timestamp_start": "2026-01-01T09:11:00",
+        "timestamp_end": "2026-01-01T09:18:00",
+        "device_type": "mobile",
+        "num_events": 10,
+        "category_affinity": "{\"electronics\": 0.301, \"fashion\": 0.1662, \"home\": 0.6411, \"beauty\": 0.0991, \"sports\": 0.023, \"baby\": 0.0573, \"books\": 0.1625, \"grocery\": 0.1556}",
+        "price_sensitivity_bucket": "mid",
+        "simulated_day": 1
+      },
+      {
+        "session_id": "SESS0000005",
+        "user_id": "U00526",
+        "timestamp_start": "2026-01-01T13:02:00",
+        "timestamp_end": "2026-01-01T13:15:00",
+        "device_type": "mobile",
+        "num_events": 10,
+        "category_affinity": "{\"electronics\": 0.6742, \"fashion\": 0.2564, \"home\": 0.1478, \"beauty\": 0.1086, \"sports\": 0.0371, \"baby\": 0.1138, \"books\": 0.1307, \"grocery\": 0.0896}",
+        "price_sensitivity_bucket": "budget",
+        "simulated_day": 1
+      }
+    ],
+    "item_catalog": [
+      {
+        "item_id": "I00001",
+        "category_l1": "books",
+        "category_l2": "business",
+        "price": 518.08,
+        "seller_id": "S001",
+        "content_embedding": "[0.9231, -0.5209, 0.2831, -0.8279, -0.2226, -0.1244, -0.2473, 0.7413]",
+        "popularity_rank": 241,
+        "freshness_score": 0.3177,
+        "available": true,
+        "created_at": "2026-01-28T08:00:00",
+        "latent_quality": 0.44251
+      },
+      {
+        "item_id": "I00002",
+        "category_l1": "beauty",
+        "category_l2": "makeup",
+        "price": 803.0,
+        "seller_id": "S006",
+        "content_embedding": "[-0.6306, 0.8886, -0.2437, -0.1012, 0.0535, -0.5376, -0.9032, 0.9984]",
+        "popularity_rank": 639,
+        "freshness_score": 0.1544,
+        "available": true,
+        "created_at": "2026-01-10T08:00:00",
+        "latent_quality": 0.00029
+      },
+      {
+        "item_id": "I00003",
+        "category_l1": "beauty",
+        "category_l2": "haircare",
+        "price": 523.86,
+        "seller_id": "S067",
+        "content_embedding": "[-0.1907, 0.8949, -0.9846, -0.3201, -0.6795, 0.3274, 0.0824, -0.5915]",
+        "popularity_rank": 96,
+        "freshness_score": 0.8458,
+        "available": true,
+        "created_at": "2026-03-23T08:00:00",
+        "latent_quality": 0.78149
+      },
+      {
+        "item_id": "I00004",
+        "category_l1": "fashion",
+        "category_l2": "bags",
+        "price": 939.25,
+        "seller_id": "S021",
+        "content_embedding": "[0.2077, -0.1436, 0.2661, -0.2169, 0.6887, 0.1734, 0.0831, 0.7885]",
+        "popularity_rank": 556,
+        "freshness_score": 0.5147,
+        "available": true,
+        "created_at": "2026-02-17T08:00:00",
+        "latent_quality": 0.01902
+      },
+      {
+        "item_id": "I00005",
+        "category_l1": "grocery",
+        "category_l2": "snacks",
+        "price": 305.0,
+        "seller_id": "S036",
+        "content_embedding": "[-0.1122, 0.4627, -0.0168, -0.0352, -0.2716, -0.1507, 0.4344, 0.3748]",
+        "popularity_rank": 451,
+        "freshness_score": 0.6548,
+        "available": true,
+        "created_at": "2026-02-21T08:00:00",
+        "latent_quality": 0.0975
+      }
+    ],
+    "impression_log": [
+      {
+        "impression_id": "IMP000000001",
+        "session_id": "SESS0000001",
+        "user_id": "U00620",
+        "item_id": "I00017",
+        "display_rank": 1,
+        "recommendation_stage": "final_reranked_candidate_seed",
+        "ranking_variant_id": "baseline_popularity_content_v0",
+        "exploration_flag": false,
+        "cold_start_flag": true,
+        "timestamp": "2026-01-01T15:24:00",
+        "clicked": 0,
+        "added_to_cart": 0,
+        "position_propensity": 0.25,
+        "simulated_relevance": 0.54669
+      },
+      {
+        "impression_id": "IMP000000002",
+        "session_id": "SESS0000001",
+        "user_id": "U00620",
+        "item_id": "I00590",
+        "display_rank": 2,
+        "recommendation_stage": "final_reranked_candidate_seed",
+        "ranking_variant_id": "baseline_popularity_content_v0",
+        "exploration_flag": false,
+        "cold_start_flag": true,
+        "timestamp": "2026-01-01T15:24:00",
+        "clicked": 0,
+        "added_to_cart": 0,
+        "position_propensity": 0.21,
+        "simulated_relevance": 0.57942
+      },
+      {
+        "impression_id": "IMP000000003",
+        "session_id": "SESS0000001",
+        "user_id": "U00620",
+        "item_id": "I00342",
+        "display_rank": 3,
+        "recommendation_stage": "final_reranked_candidate_seed",
+        "ranking_variant_id": "baseline_popularity_content_v0",
+        "exploration_flag": false,
+        "cold_start_flag": true,
+        "timestamp": "2026-01-01T15:24:00",
+        "clicked": 0,
+        "added_to_cart": 0,
+        "position_propensity": 0.18,
+        "simulated_relevance": 0.62955
+      },
+      {
+        "impression_id": "IMP000000004",
+        "session_id": "SESS0000001",
+        "user_id": "U00620",
+        "item_id": "I00204",
+        "display_rank": 4,
+        "recommendation_stage": "final_reranked_candidate_seed",
+        "ranking_variant_id": "baseline_popularity_content_v0",
+        "exploration_flag": false,
+        "cold_start_flag": true,
+        "timestamp": "2026-01-01T15:24:00",
+        "clicked": 0,
+        "added_to_cart": 0,
+        "position_propensity": 0.15,
+        "simulated_relevance": 0.43341
+      },
+      {
+        "impression_id": "IMP000000005",
+        "session_id": "SESS0000001",
+        "user_id": "U00620",
+        "item_id": "I00188",
+        "display_rank": 5,
+        "recommendation_stage": "final_reranked_candidate_seed",
+        "ranking_variant_id": "baseline_popularity_content_v0",
+        "exploration_flag": false,
+        "cold_start_flag": true,
+        "timestamp": "2026-01-01T15:24:00",
+        "clicked": 0,
+        "added_to_cart": 0,
+        "position_propensity": 0.12,
+        "simulated_relevance": 0.62138
+      }
+    ],
+    "purchase_log": [
+      {
+        "purchase_id": "PUR00000001",
+        "session_id": "SESS0000004",
+        "user_id": "U00828",
+        "item_id": "I00544",
+        "impression_id": "IMP000000031",
+        "purchase_timestamp": "2026-01-01T11:20:00",
+        "revenue": 434.53,
+        "returned": 0,
+        "return_timestamp": ""
+      },
+      {
+        "purchase_id": "PUR00000002",
+        "session_id": "SESS0000004",
+        "user_id": "U00828",
+        "item_id": "I00181",
+        "impression_id": "IMP000000037",
+        "purchase_timestamp": "2026-01-01T17:46:00",
+        "revenue": 445.06,
+        "returned": 0,
+        "return_timestamp": ""
+      },
+      {
+        "purchase_id": "PUR00000003",
+        "session_id": "SESS0000005",
+        "user_id": "U00526",
+        "item_id": "I00069",
+        "impression_id": "IMP000000048",
+        "purchase_timestamp": "2026-01-01T15:21:00",
+        "revenue": 480.42,
+        "returned": 0,
+        "return_timestamp": ""
+      },
+      {
+        "purchase_id": "PUR00000004",
+        "session_id": "SESS0000007",
+        "user_id": "U00755",
+        "item_id": "I00188",
+        "impression_id": "IMP000000066",
+        "purchase_timestamp": "2026-01-02T14:18:00",
+        "revenue": 234.4,
+        "returned": 0,
+        "return_timestamp": ""
+      },
+      {
+        "purchase_id": "PUR00000005",
+        "session_id": "SESS0000008",
+        "user_id": "U00384",
+        "item_id": "I00129",
+        "impression_id": "IMP000000078",
+        "purchase_timestamp": "2026-01-01T19:08:00",
+        "revenue": 1331.61,
+        "returned": 0,
+        "return_timestamp": ""
+      }
+    ],
+    "attributed_label_log": [
+      {
+        "impression_id": "IMP000000001",
+        "session_id": "SESS0000001",
+        "item_id": "I00017",
+        "attributed_purchase": 0,
+        "attribution_window_days": 3,
+        "attribution_timestamp": "",
+        "attributed_revenue": 0.0,
+        "attributed_return": 0,
+        "data_gap_flag": false
+      },
+      {
+        "impression_id": "IMP000000002",
+        "session_id": "SESS0000001",
+        "item_id": "I00590",
+        "attributed_purchase": 0,
+        "attribution_window_days": 3,
+        "attribution_timestamp": "",
+        "attributed_revenue": 0.0,
+        "attributed_return": 0,
+        "data_gap_flag": false
+      },
+      {
+        "impression_id": "IMP000000003",
+        "session_id": "SESS0000001",
+        "item_id": "I00342",
+        "attributed_purchase": 0,
+        "attribution_window_days": 3,
+        "attribution_timestamp": "",
+        "attributed_revenue": 0.0,
+        "attributed_return": 0,
+        "data_gap_flag": false
+      },
+      {
+        "impression_id": "IMP000000004",
+        "session_id": "SESS0000001",
+        "item_id": "I00204",
+        "attributed_purchase": 0,
+        "attribution_window_days": 3,
+        "attribution_timestamp": "",
+        "attributed_revenue": 0.0,
+        "attributed_return": 0,
+        "data_gap_flag": false
+      },
+      {
+        "impression_id": "IMP000000005",
+        "session_id": "SESS0000001",
+        "item_id": "I00188",
+        "attributed_purchase": 0,
+        "attribution_window_days": 3,
+        "attribution_timestamp": "",
+        "attributed_revenue": 0.0,
+        "attributed_return": 0,
+        "data_gap_flag": false
+      }
+    ],
+    "exploration_log": [
+      {
+        "session_id": "SESS0000002",
+        "item_id": "I00615",
+        "display_rank": 9,
+        "is_exploration": true,
+        "exploration_reason": "epsilon_greedy_freshness_weighted",
+        "timestamp": "2026-01-01T17:54:00"
+      },
+      {
+        "session_id": "SESS0000005",
+        "item_id": "I00284",
+        "display_rank": 5,
+        "is_exploration": true,
+        "exploration_reason": "epsilon_greedy_freshness_weighted",
+        "timestamp": "2026-01-01T13:02:00"
+      },
+      {
+        "session_id": "SESS0000007",
+        "item_id": "I00626",
+        "display_rank": 5,
+        "is_exploration": true,
+        "exploration_reason": "epsilon_greedy_freshness_weighted",
+        "timestamp": "2026-01-01T11:48:00"
+      },
+      {
+        "session_id": "SESS0000007",
+        "item_id": "I00527",
+        "display_rank": 8,
+        "is_exploration": true,
+        "exploration_reason": "epsilon_greedy_freshness_weighted",
+        "timestamp": "2026-01-01T11:48:00"
+      },
+      {
+        "session_id": "SESS0000008",
+        "item_id": "I00082",
+        "display_rank": 2,
+        "is_exploration": true,
+        "exploration_reason": "epsilon_greedy_freshness_weighted",
+        "timestamp": "2026-01-01T10:20:00"
+      }
+    ],
+    "cold_start_events": [
+      {
+        "event_id": "COLD000001",
+        "item_id": "I00521",
+        "trigger_reason": "new_item",
+        "fallback_strategy": "content_based",
+        "timestamp": "2026-01-01T17:54:00",
+        "retrieved": true
+      },
+      {
+        "event_id": "COLD000002",
+        "item_id": "I00050",
+        "trigger_reason": "new_item",
+        "fallback_strategy": "content_based",
+        "timestamp": "2026-01-01T17:54:00",
+        "retrieved": true
+      },
+      {
+        "event_id": "COLD000003",
+        "item_id": "I00544",
+        "trigger_reason": "new_item",
+        "fallback_strategy": "content_based",
+        "timestamp": "2026-01-01T09:11:00",
+        "retrieved": true
+      },
+      {
+        "event_id": "COLD000004",
+        "item_id": "I00042",
+        "trigger_reason": "new_item",
+        "fallback_strategy": "content_based",
+        "timestamp": "2026-01-01T09:11:00",
+        "retrieved": true
+      },
+      {
+        "event_id": "COLD000005",
+        "item_id": "I00181",
+        "trigger_reason": "new_item",
+        "fallback_strategy": "content_based",
+        "timestamp": "2026-01-01T09:11:00",
+        "retrieved": true
+      }
+    ]
+  }
+}

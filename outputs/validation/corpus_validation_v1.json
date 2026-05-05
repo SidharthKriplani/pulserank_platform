@@ -1,0 +1,1018 @@
+{
+  "artifact": "pulserank_corpus_validation_v1",
+  "status": "pass",
+  "check_count": 83,
+  "passed_count": 83,
+  "checks": [
+    {
+      "name": "file_exists::user_sessions",
+      "passed": true,
+      "observed": "data/processed/user_sessions.csv"
+    },
+    {
+      "name": "file_exists::item_catalog",
+      "passed": true,
+      "observed": "data/processed/item_catalog.csv"
+    },
+    {
+      "name": "file_exists::impression_log",
+      "passed": true,
+      "observed": "data/processed/impression_log.csv"
+    },
+    {
+      "name": "file_exists::purchase_log",
+      "passed": true,
+      "observed": "data/processed/purchase_log.csv"
+    },
+    {
+      "name": "file_exists::attributed_label_log",
+      "passed": true,
+      "observed": "data/processed/attributed_label_log.csv"
+    },
+    {
+      "name": "file_exists::exploration_log",
+      "passed": true,
+      "observed": "data/processed/exploration_log.csv"
+    },
+    {
+      "name": "file_exists::cold_start_events",
+      "passed": true,
+      "observed": "data/processed/cold_start_events.csv"
+    },
+    {
+      "name": "row_count_positive::user_sessions",
+      "passed": true,
+      "observed": 4132
+    },
+    {
+      "name": "row_count_positive::item_catalog",
+      "passed": true,
+      "observed": 650
+    },
+    {
+      "name": "row_count_positive::impression_log",
+      "passed": true,
+      "observed": 41320
+    },
+    {
+      "name": "row_count_positive::purchase_log",
+      "passed": true,
+      "observed": 539
+    },
+    {
+      "name": "row_count_positive::attributed_label_log",
+      "passed": true,
+      "observed": 41320
+    },
+    {
+      "name": "row_count_positive::exploration_log",
+      "passed": true,
+      "observed": 2084
+    },
+    {
+      "name": "row_count_positive::cold_start_events",
+      "passed": true,
+      "observed": 3138
+    },
+    {
+      "name": "column_exists::user_sessions.session_id",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "user_id",
+        "timestamp_start",
+        "timestamp_end",
+        "device_type",
+        "num_events",
+        "category_affinity",
+        "price_sensitivity_bucket",
+        "simulated_day"
+      ]
+    },
+    {
+      "name": "column_exists::user_sessions.user_id",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "user_id",
+        "timestamp_start",
+        "timestamp_end",
+        "device_type",
+        "num_events",
+        "category_affinity",
+        "price_sensitivity_bucket",
+        "simulated_day"
+      ]
+    },
+    {
+      "name": "column_exists::user_sessions.timestamp_start",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "user_id",
+        "timestamp_start",
+        "timestamp_end",
+        "device_type",
+        "num_events",
+        "category_affinity",
+        "price_sensitivity_bucket",
+        "simulated_day"
+      ]
+    },
+    {
+      "name": "column_exists::user_sessions.timestamp_end",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "user_id",
+        "timestamp_start",
+        "timestamp_end",
+        "device_type",
+        "num_events",
+        "category_affinity",
+        "price_sensitivity_bucket",
+        "simulated_day"
+      ]
+    },
+    {
+      "name": "column_exists::user_sessions.device_type",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "user_id",
+        "timestamp_start",
+        "timestamp_end",
+        "device_type",
+        "num_events",
+        "category_affinity",
+        "price_sensitivity_bucket",
+        "simulated_day"
+      ]
+    },
+    {
+      "name": "column_exists::user_sessions.num_events",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "user_id",
+        "timestamp_start",
+        "timestamp_end",
+        "device_type",
+        "num_events",
+        "category_affinity",
+        "price_sensitivity_bucket",
+        "simulated_day"
+      ]
+    },
+    {
+      "name": "column_exists::user_sessions.category_affinity",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "user_id",
+        "timestamp_start",
+        "timestamp_end",
+        "device_type",
+        "num_events",
+        "category_affinity",
+        "price_sensitivity_bucket",
+        "simulated_day"
+      ]
+    },
+    {
+      "name": "column_exists::user_sessions.price_sensitivity_bucket",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "user_id",
+        "timestamp_start",
+        "timestamp_end",
+        "device_type",
+        "num_events",
+        "category_affinity",
+        "price_sensitivity_bucket",
+        "simulated_day"
+      ]
+    },
+    {
+      "name": "column_exists::user_sessions.simulated_day",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "user_id",
+        "timestamp_start",
+        "timestamp_end",
+        "device_type",
+        "num_events",
+        "category_affinity",
+        "price_sensitivity_bucket",
+        "simulated_day"
+      ]
+    },
+    {
+      "name": "column_exists::item_catalog.item_id",
+      "passed": true,
+      "observed": [
+        "item_id",
+        "category_l1",
+        "category_l2",
+        "price",
+        "seller_id",
+        "content_embedding",
+        "popularity_rank",
+        "freshness_score",
+        "available",
+        "created_at",
+        "latent_quality"
+      ]
+    },
+    {
+      "name": "column_exists::item_catalog.category_l1",
+      "passed": true,
+      "observed": [
+        "item_id",
+        "category_l1",
+        "category_l2",
+        "price",
+        "seller_id",
+        "content_embedding",
+        "popularity_rank",
+        "freshness_score",
+        "available",
+        "created_at",
+        "latent_quality"
+      ]
+    },
+    {
+      "name": "column_exists::item_catalog.category_l2",
+      "passed": true,
+      "observed": [
+        "item_id",
+        "category_l1",
+        "category_l2",
+        "price",
+        "seller_id",
+        "content_embedding",
+        "popularity_rank",
+        "freshness_score",
+        "available",
+        "created_at",
+        "latent_quality"
+      ]
+    },
+    {
+      "name": "column_exists::item_catalog.price",
+      "passed": true,
+      "observed": [
+        "item_id",
+        "category_l1",
+        "category_l2",
+        "price",
+        "seller_id",
+        "content_embedding",
+        "popularity_rank",
+        "freshness_score",
+        "available",
+        "created_at",
+        "latent_quality"
+      ]
+    },
+    {
+      "name": "column_exists::item_catalog.seller_id",
+      "passed": true,
+      "observed": [
+        "item_id",
+        "category_l1",
+        "category_l2",
+        "price",
+        "seller_id",
+        "content_embedding",
+        "popularity_rank",
+        "freshness_score",
+        "available",
+        "created_at",
+        "latent_quality"
+      ]
+    },
+    {
+      "name": "column_exists::item_catalog.content_embedding",
+      "passed": true,
+      "observed": [
+        "item_id",
+        "category_l1",
+        "category_l2",
+        "price",
+        "seller_id",
+        "content_embedding",
+        "popularity_rank",
+        "freshness_score",
+        "available",
+        "created_at",
+        "latent_quality"
+      ]
+    },
+    {
+      "name": "column_exists::item_catalog.popularity_rank",
+      "passed": true,
+      "observed": [
+        "item_id",
+        "category_l1",
+        "category_l2",
+        "price",
+        "seller_id",
+        "content_embedding",
+        "popularity_rank",
+        "freshness_score",
+        "available",
+        "created_at",
+        "latent_quality"
+      ]
+    },
+    {
+      "name": "column_exists::item_catalog.freshness_score",
+      "passed": true,
+      "observed": [
+        "item_id",
+        "category_l1",
+        "category_l2",
+        "price",
+        "seller_id",
+        "content_embedding",
+        "popularity_rank",
+        "freshness_score",
+        "available",
+        "created_at",
+        "latent_quality"
+      ]
+    },
+    {
+      "name": "column_exists::item_catalog.available",
+      "passed": true,
+      "observed": [
+        "item_id",
+        "category_l1",
+        "category_l2",
+        "price",
+        "seller_id",
+        "content_embedding",
+        "popularity_rank",
+        "freshness_score",
+        "available",
+        "created_at",
+        "latent_quality"
+      ]
+    },
+    {
+      "name": "column_exists::item_catalog.created_at",
+      "passed": true,
+      "observed": [
+        "item_id",
+        "category_l1",
+        "category_l2",
+        "price",
+        "seller_id",
+        "content_embedding",
+        "popularity_rank",
+        "freshness_score",
+        "available",
+        "created_at",
+        "latent_quality"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.impression_id",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.session_id",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.user_id",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.item_id",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.display_rank",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.recommendation_stage",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.ranking_variant_id",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.exploration_flag",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.cold_start_flag",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.timestamp",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.clicked",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.added_to_cart",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::impression_log.position_propensity",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "recommendation_stage",
+        "ranking_variant_id",
+        "exploration_flag",
+        "cold_start_flag",
+        "timestamp",
+        "clicked",
+        "added_to_cart",
+        "position_propensity",
+        "simulated_relevance"
+      ]
+    },
+    {
+      "name": "column_exists::purchase_log.purchase_id",
+      "passed": true,
+      "observed": [
+        "purchase_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "impression_id",
+        "purchase_timestamp",
+        "revenue",
+        "returned",
+        "return_timestamp"
+      ]
+    },
+    {
+      "name": "column_exists::purchase_log.session_id",
+      "passed": true,
+      "observed": [
+        "purchase_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "impression_id",
+        "purchase_timestamp",
+        "revenue",
+        "returned",
+        "return_timestamp"
+      ]
+    },
+    {
+      "name": "column_exists::purchase_log.user_id",
+      "passed": true,
+      "observed": [
+        "purchase_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "impression_id",
+        "purchase_timestamp",
+        "revenue",
+        "returned",
+        "return_timestamp"
+      ]
+    },
+    {
+      "name": "column_exists::purchase_log.item_id",
+      "passed": true,
+      "observed": [
+        "purchase_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "impression_id",
+        "purchase_timestamp",
+        "revenue",
+        "returned",
+        "return_timestamp"
+      ]
+    },
+    {
+      "name": "column_exists::purchase_log.impression_id",
+      "passed": true,
+      "observed": [
+        "purchase_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "impression_id",
+        "purchase_timestamp",
+        "revenue",
+        "returned",
+        "return_timestamp"
+      ]
+    },
+    {
+      "name": "column_exists::purchase_log.purchase_timestamp",
+      "passed": true,
+      "observed": [
+        "purchase_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "impression_id",
+        "purchase_timestamp",
+        "revenue",
+        "returned",
+        "return_timestamp"
+      ]
+    },
+    {
+      "name": "column_exists::purchase_log.revenue",
+      "passed": true,
+      "observed": [
+        "purchase_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "impression_id",
+        "purchase_timestamp",
+        "revenue",
+        "returned",
+        "return_timestamp"
+      ]
+    },
+    {
+      "name": "column_exists::purchase_log.returned",
+      "passed": true,
+      "observed": [
+        "purchase_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "impression_id",
+        "purchase_timestamp",
+        "revenue",
+        "returned",
+        "return_timestamp"
+      ]
+    },
+    {
+      "name": "column_exists::purchase_log.return_timestamp",
+      "passed": true,
+      "observed": [
+        "purchase_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "impression_id",
+        "purchase_timestamp",
+        "revenue",
+        "returned",
+        "return_timestamp"
+      ]
+    },
+    {
+      "name": "column_exists::attributed_label_log.impression_id",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "item_id",
+        "attributed_purchase",
+        "attribution_window_days",
+        "attribution_timestamp",
+        "attributed_revenue",
+        "attributed_return",
+        "data_gap_flag"
+      ]
+    },
+    {
+      "name": "column_exists::attributed_label_log.session_id",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "item_id",
+        "attributed_purchase",
+        "attribution_window_days",
+        "attribution_timestamp",
+        "attributed_revenue",
+        "attributed_return",
+        "data_gap_flag"
+      ]
+    },
+    {
+      "name": "column_exists::attributed_label_log.item_id",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "item_id",
+        "attributed_purchase",
+        "attribution_window_days",
+        "attribution_timestamp",
+        "attributed_revenue",
+        "attributed_return",
+        "data_gap_flag"
+      ]
+    },
+    {
+      "name": "column_exists::attributed_label_log.attributed_purchase",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "item_id",
+        "attributed_purchase",
+        "attribution_window_days",
+        "attribution_timestamp",
+        "attributed_revenue",
+        "attributed_return",
+        "data_gap_flag"
+      ]
+    },
+    {
+      "name": "column_exists::attributed_label_log.attribution_window_days",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "item_id",
+        "attributed_purchase",
+        "attribution_window_days",
+        "attribution_timestamp",
+        "attributed_revenue",
+        "attributed_return",
+        "data_gap_flag"
+      ]
+    },
+    {
+      "name": "column_exists::attributed_label_log.attribution_timestamp",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "item_id",
+        "attributed_purchase",
+        "attribution_window_days",
+        "attribution_timestamp",
+        "attributed_revenue",
+        "attributed_return",
+        "data_gap_flag"
+      ]
+    },
+    {
+      "name": "column_exists::attributed_label_log.attributed_revenue",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "item_id",
+        "attributed_purchase",
+        "attribution_window_days",
+        "attribution_timestamp",
+        "attributed_revenue",
+        "attributed_return",
+        "data_gap_flag"
+      ]
+    },
+    {
+      "name": "column_exists::attributed_label_log.attributed_return",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "item_id",
+        "attributed_purchase",
+        "attribution_window_days",
+        "attribution_timestamp",
+        "attributed_revenue",
+        "attributed_return",
+        "data_gap_flag"
+      ]
+    },
+    {
+      "name": "column_exists::attributed_label_log.data_gap_flag",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "item_id",
+        "attributed_purchase",
+        "attribution_window_days",
+        "attribution_timestamp",
+        "attributed_revenue",
+        "attributed_return",
+        "data_gap_flag"
+      ]
+    },
+    {
+      "name": "display_rank_complete",
+      "passed": true,
+      "observed": {
+        "ranks": 41320,
+        "impressions": 41320
+      }
+    },
+    {
+      "name": "display_rank_range_1_to_10",
+      "passed": true,
+      "observed": {
+        "min": 1,
+        "max": 10
+      }
+    },
+    {
+      "name": "impression_has_position_propensity",
+      "passed": true,
+      "observed": "positive propensities"
+    },
+    {
+      "name": "click_labels_binary",
+      "passed": true,
+      "observed": "clicked in {0,1}"
+    },
+    {
+      "name": "atc_labels_binary",
+      "passed": true,
+      "observed": "added_to_cart in {0,1}"
+    },
+    {
+      "name": "session_count_minimum",
+      "passed": true,
+      "observed": 4132
+    },
+    {
+      "name": "item_count_minimum",
+      "passed": true,
+      "observed": 650
+    },
+    {
+      "name": "impression_count_minimum",
+      "passed": true,
+      "observed": 41320
+    },
+    {
+      "name": "purchase_count_minimum",
+      "passed": true,
+      "observed": 539
+    },
+    {
+      "name": "attributed_rows_equal_impressions",
+      "passed": true,
+      "observed": {
+        "attributed": 41320,
+        "impressions": 41320
+      }
+    },
+    {
+      "name": "artifact_exists::outputs/evidence/corpus_summary.json",
+      "passed": true,
+      "observed": "outputs/evidence/corpus_summary.json"
+    },
+    {
+      "name": "artifact_exists::outputs/evidence/schema_manifest.json",
+      "passed": true,
+      "observed": "outputs/evidence/schema_manifest.json"
+    },
+    {
+      "name": "artifact_exists::outputs/evidence/corpus_samples.json",
+      "passed": true,
+      "observed": "outputs/evidence/corpus_samples.json"
+    },
+    {
+      "name": "artifact_exists::outputs/reports/group1_corpus_report_v1.json",
+      "passed": true,
+      "observed": "outputs/reports/group1_corpus_report_v1.json"
+    },
+    {
+      "name": "summary_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "summary_display_rank_coverage_1",
+      "passed": true,
+      "observed": 1.0
+    },
+    {
+      "name": "summary_has_revenue",
+      "passed": true,
+      "observed": 787547.49
+    },
+    {
+      "name": "schema_manifest_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "schema_mentions_display_rank",
+      "passed": true,
+      "observed": "impression_log.display_rank"
+    }
+  ],
+  "evidence_statement": "Validates Group 1 deterministic marketplace corpus and confirms every impression has display_rank for future IPS correction."
+}

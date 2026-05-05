@@ -1,0 +1,86 @@
+{
+  "artifact": "pulserank_schema_manifest_v1",
+  "status": "pass",
+  "schemas": {
+    "user_sessions": [
+      "session_id",
+      "user_id",
+      "timestamp_start",
+      "timestamp_end",
+      "device_type",
+      "num_events",
+      "category_affinity",
+      "price_sensitivity_bucket",
+      "simulated_day"
+    ],
+    "item_catalog": [
+      "item_id",
+      "category_l1",
+      "category_l2",
+      "price",
+      "seller_id",
+      "content_embedding",
+      "popularity_rank",
+      "freshness_score",
+      "available",
+      "created_at",
+      "latent_quality"
+    ],
+    "impression_log": [
+      "impression_id",
+      "session_id",
+      "user_id",
+      "item_id",
+      "display_rank",
+      "recommendation_stage",
+      "ranking_variant_id",
+      "exploration_flag",
+      "cold_start_flag",
+      "timestamp",
+      "clicked",
+      "added_to_cart",
+      "position_propensity",
+      "simulated_relevance"
+    ],
+    "purchase_log": [
+      "purchase_id",
+      "session_id",
+      "user_id",
+      "item_id",
+      "impression_id",
+      "purchase_timestamp",
+      "revenue",
+      "returned",
+      "return_timestamp"
+    ],
+    "attributed_label_log": [
+      "impression_id",
+      "session_id",
+      "item_id",
+      "attributed_purchase",
+      "attribution_window_days",
+      "attribution_timestamp",
+      "attributed_revenue",
+      "attributed_return",
+      "data_gap_flag"
+    ],
+    "exploration_log": [
+      "session_id",
+      "item_id",
+      "display_rank",
+      "is_exploration",
+      "exploration_reason",
+      "timestamp"
+    ],
+    "cold_start_events": [
+      "event_id",
+      "item_id",
+      "trigger_reason",
+      "fallback_strategy",
+      "timestamp",
+      "retrieved"
+    ]
+  },
+  "non_negotiable_field": "impression_log.display_rank",
+  "evidence_statement": "Defines the Group 1 PulseRank corpus schemas required for IPS correction, attribution, exploration, and marketplace exposure governance."
+}
