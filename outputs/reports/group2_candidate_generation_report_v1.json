@@ -1,0 +1,9 @@
+{
+  "artifact": "pulserank_group2_candidate_generation_report_v1",
+  "status": "pass",
+  "data_path": "data/processed/candidate_sets.csv",
+  "candidate_generation_report_path": "outputs/evidence/candidate_generation_report.json",
+  "candidate_recall_report_path": "outputs/evidence/candidate_recall_report.json",
+  "candidate_samples_path": "outputs/evidence/candidate_samples.json",
+  "evidence_statement": "Group 2 candidate generation complete with popularity, content-similarity, and hybrid recall evidence."
+}

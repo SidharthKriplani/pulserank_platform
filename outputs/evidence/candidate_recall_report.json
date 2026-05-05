@@ -1,0 +1,11 @@
+{
+  "artifact": "pulserank_candidate_recall_report_v1",
+  "status": "pass",
+  "metric": "purchase_session_recall_at_100",
+  "evaluated_sessions": 503,
+  "baseline_popularity_recall_at_100": 0.55865,
+  "content_similarity_recall_at_100": 0.68986,
+  "hybrid_recall_at_100": 0.68986,
+  "best_generator": "content_similarity",
+  "interpretation": "Candidate generation prioritizes recall: items not retrieved cannot be ranked."
+}

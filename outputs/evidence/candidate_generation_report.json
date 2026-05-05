@@ -1,0 +1,35 @@
+{
+  "artifact": "pulserank_candidate_generation_report_v1",
+  "status": "pass",
+  "candidate_set_size": 100,
+  "sessions_scored": 4132,
+  "items_available": 650,
+  "candidate_rows_written": 4132,
+  "generators": [
+    "popularity",
+    "content_similarity",
+    "hybrid_popularity_content"
+  ],
+  "evaluated_purchase_sessions": 503,
+  "recall_at_100": {
+    "popularity": 0.55865,
+    "content_similarity": 0.68986,
+    "hybrid_popularity_content": 0.68986
+  },
+  "catalog_coverage_at_100": {
+    "popularity": 0.15385,
+    "content_similarity": 1.0,
+    "hybrid_popularity_content": 1.0
+  },
+  "hybrid_category_mix": {
+    "fashion": 68850,
+    "grocery": 61813,
+    "beauty": 58825,
+    "electronics": 51925,
+    "baby": 47295,
+    "books": 45456,
+    "home": 39980,
+    "sports": 39056
+  },
+  "evidence_statement": "Implements PulseRank must-have candidate generation using popularity, content similarity, and a hybrid baseline before downstream ranking."
+}

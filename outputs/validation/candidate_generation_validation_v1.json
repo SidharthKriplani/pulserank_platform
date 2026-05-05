@@ -1,0 +1,112 @@
+{
+  "artifact": "pulserank_candidate_generation_validation_v1",
+  "status": "pass",
+  "check_count": 17,
+  "passed_count": 17,
+  "checks": [
+    {
+      "name": "exists::data/processed/candidate_sets.csv",
+      "passed": true,
+      "observed": "data/processed/candidate_sets.csv"
+    },
+    {
+      "name": "exists::outputs/evidence/candidate_generation_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/candidate_generation_report.json"
+    },
+    {
+      "name": "exists::outputs/evidence/candidate_recall_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/candidate_recall_report.json"
+    },
+    {
+      "name": "exists::outputs/evidence/candidate_samples.json",
+      "passed": true,
+      "observed": "outputs/evidence/candidate_samples.json"
+    },
+    {
+      "name": "exists::outputs/reports/group2_candidate_generation_report_v1.json",
+      "passed": true,
+      "observed": "outputs/reports/group2_candidate_generation_report_v1.json"
+    },
+    {
+      "name": "candidate_rows_match_sessions",
+      "passed": true,
+      "observed": {
+        "candidate_rows": 4132,
+        "sessions": 4132
+      }
+    },
+    {
+      "name": "candidate_rows_positive",
+      "passed": true,
+      "observed": 4132
+    },
+    {
+      "name": "candidate_set_size_100",
+      "passed": true,
+      "observed": {
+        "min": 100,
+        "max": 100
+      }
+    },
+    {
+      "name": "candidate_ids_parseable",
+      "passed": true,
+      "observed": 100
+    },
+    {
+      "name": "top10_parseable",
+      "passed": true,
+      "observed": "[\"I00590\", \"I00201\", \"I00373\", \"I00441\", \"I00221\", \"I00342\", \"I00012\", \"I00017\", \"I00096\", \"I00478\"]"
+    },
+    {
+      "name": "report_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "report_has_three_generators",
+      "passed": true,
+      "observed": [
+        "popularity",
+        "content_similarity",
+        "hybrid_popularity_content"
+      ]
+    },
+    {
+      "name": "report_sessions_scored_positive",
+      "passed": true,
+      "observed": 4132
+    },
+    {
+      "name": "report_recall_values_present",
+      "passed": true,
+      "observed": {
+        "popularity": 0.55865,
+        "content_similarity": 0.68986,
+        "hybrid_popularity_content": 0.68986
+      }
+    },
+    {
+      "name": "hybrid_recall_nonzero",
+      "passed": true,
+      "observed": 0.68986
+    },
+    {
+      "name": "recall_evaluated_sessions_nonzero",
+      "passed": true,
+      "observed": 503
+    },
+    {
+      "name": "hybrid_catalog_coverage_positive",
+      "passed": true,
+      "observed": {
+        "popularity": 0.15385,
+        "content_similarity": 1.0,
+        "hybrid_popularity_content": 1.0
+      }
+    }
+  ],
+  "evidence_statement": "Validates Group 2 candidate generation artifacts, session-level candidate sets, recall evidence, and catalog coverage."
+}
