@@ -1,0 +1,48 @@
+{
+  "artifact": "pulserank_offline_eval_log_v1",
+  "status": "pass",
+  "split_strategy": "temporal_holdout",
+  "train_days": [
+    1,
+    60
+  ],
+  "holdout_days": [
+    61,
+    90
+  ],
+  "ranking_metric_stack": [
+    "ndcg_at_10",
+    "mrr",
+    "precision_at_10",
+    "recall_at_10",
+    "map_at_10",
+    "seller_gini_at_10"
+  ],
+  "baseline_popularity": {
+    "evaluated_sessions": 150,
+    "ndcg_at_10": 0.17259,
+    "mrr": 0.15178,
+    "precision_at_10": 0.03,
+    "recall_at_10": 0.29,
+    "map_at_10": 0.13937,
+    "seller_gini_at_10": 0.44099
+  },
+  "ranking_baseline": {
+    "evaluated_sessions": 150,
+    "ndcg_at_10": 0.13341,
+    "mrr": 0.11389,
+    "precision_at_10": 0.02533,
+    "recall_at_10": 0.24333,
+    "map_at_10": 0.10015,
+    "seller_gini_at_10": 0.40352
+  },
+  "train_ranking_baseline": {
+    "evaluated_sessions": 353,
+    "ndcg_at_10": 0.12034,
+    "mrr": 0.10592,
+    "precision_at_10": 0.02635,
+    "recall_at_10": 0.22852,
+    "map_at_10": 0.08861
+  },
+  "evidence_statement": "Evaluates PulseRank ranking baseline on temporal holdout. Random split is intentionally not used."
+}

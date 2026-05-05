@@ -1,0 +1,20 @@
+{
+  "artifact": "pulserank_ranking_baseline_report_v1",
+  "status": "pass",
+  "ranker_type": "deterministic_linear_relevance_baseline",
+  "model_note": "Lightweight interpretable ranking baseline using session/category affinity, price fit, freshness, popularity, latent quality, and train-period target rates.",
+  "temporal_split_enforced": true,
+  "train_sessions": 2806,
+  "holdout_sessions": 1326,
+  "ranked_rows_written": 41320,
+  "holdout_purchase_sessions_evaluated": 150,
+  "holdout_ndcg_at_10": 0.13341,
+  "holdout_mrr": 0.11389,
+  "holdout_precision_at_10": 0.02533,
+  "holdout_recall_at_10": 0.24333,
+  "holdout_map_at_10": 0.10015,
+  "popularity_ndcg_at_10": 0.17259,
+  "ndcg_delta_vs_popularity": -0.03918,
+  "seller_gini_at_10": 0.40352,
+  "evidence_statement": "Implements Group 3 ranking baseline with leakage-aware temporal train/test split and offline ranking metric stack."
+}

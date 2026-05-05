@@ -1,0 +1,316 @@
+{
+  "artifact": "pulserank_ranking_baseline_validation_v1",
+  "status": "pass",
+  "check_count": 28,
+  "passed_count": 28,
+  "checks": [
+    {
+      "name": "exists::data/processed/ranked_lists.csv",
+      "passed": true,
+      "observed": "data/processed/ranked_lists.csv"
+    },
+    {
+      "name": "exists::outputs/evidence/ranking_baseline_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/ranking_baseline_report.json"
+    },
+    {
+      "name": "exists::outputs/evidence/offline_eval_log.json",
+      "passed": true,
+      "observed": "outputs/evidence/offline_eval_log.json"
+    },
+    {
+      "name": "exists::outputs/evidence/model_registry.json",
+      "passed": true,
+      "observed": "outputs/evidence/model_registry.json"
+    },
+    {
+      "name": "exists::outputs/reports/group3_ranking_baseline_report_v1.json",
+      "passed": true,
+      "observed": "outputs/reports/group3_ranking_baseline_report_v1.json"
+    },
+    {
+      "name": "ranked_rows_positive",
+      "passed": true,
+      "observed": 41320
+    },
+    {
+      "name": "ranked_rows_10_per_session",
+      "passed": true,
+      "observed": {
+        "ranked": 41320,
+        "sessions_x10": 41320
+      }
+    },
+    {
+      "name": "column_exists::session_id",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "model_rank",
+        "ranking_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::item_id",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "model_rank",
+        "ranking_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::model_rank",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "model_rank",
+        "ranking_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::ranking_score",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "model_rank",
+        "ranking_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::label_purchase_in_session",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "model_rank",
+        "ranking_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::simulated_day",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "model_rank",
+        "ranking_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::split",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "model_rank",
+        "ranking_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "model_rank_range_1_to_10",
+      "passed": true,
+      "observed": {
+        "min": 1,
+        "max": 10
+      }
+    },
+    {
+      "name": "ranking_scores_in_0_1",
+      "passed": true,
+      "observed": {
+        "min": 0.34269667,
+        "max": 0.68552117
+      }
+    },
+    {
+      "name": "has_train_and_holdout",
+      "passed": true,
+      "observed": [
+        "holdout",
+        "train"
+      ]
+    },
+    {
+      "name": "ranking_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "temporal_split_enforced",
+      "passed": true,
+      "observed": true
+    },
+    {
+      "name": "holdout_sessions_positive",
+      "passed": true,
+      "observed": 1326
+    },
+    {
+      "name": "holdout_ndcg_present",
+      "passed": true,
+      "observed": 0.13341
+    },
+    {
+      "name": "seller_gini_present",
+      "passed": true,
+      "observed": 0.40352
+    },
+    {
+      "name": "offline_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "offline_temporal_holdout",
+      "passed": true,
+      "observed": "temporal_holdout"
+    },
+    {
+      "name": "offline_metric_stack_complete",
+      "passed": true,
+      "observed": {
+        "expected": [
+          "map_at_10",
+          "mrr",
+          "ndcg_at_10",
+          "precision_at_10",
+          "recall_at_10",
+          "seller_gini_at_10"
+        ],
+        "actual": [
+          "map_at_10",
+          "mrr",
+          "ndcg_at_10",
+          "precision_at_10",
+          "recall_at_10",
+          "seller_gini_at_10"
+        ]
+      }
+    },
+    {
+      "name": "registry_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "registry_has_model",
+      "passed": true,
+      "observed": [
+        {
+          "model_id": "ranker_linear_relevance_v1",
+          "model_type": "deterministic_linear_relevance_baseline",
+          "training_window_days": [
+            1,
+            60
+          ],
+          "evaluation_window_days": [
+            61,
+            90
+          ],
+          "promotion_gate": "baseline_logged_not_promoted",
+          "temporal_holdout_used": true,
+          "metrics": {
+            "artifact": "pulserank_ranking_baseline_report_v1",
+            "status": "pass",
+            "ranker_type": "deterministic_linear_relevance_baseline",
+            "model_note": "Lightweight interpretable ranking baseline using session/category affinity, price fit, freshness, popularity, latent quality, and train-period target rates.",
+            "temporal_split_enforced": true,
+            "train_sessions": 2806,
+            "holdout_sessions": 1326,
+            "ranked_rows_written": 41320,
+            "holdout_purchase_sessions_evaluated": 150,
+            "holdout_ndcg_at_10": 0.13341,
+            "holdout_mrr": 0.11389,
+            "holdout_precision_at_10": 0.02533,
+            "holdout_recall_at_10": 0.24333,
+            "holdout_map_at_10": 0.10015,
+            "popularity_ndcg_at_10": 0.17259,
+            "ndcg_delta_vs_popularity": -0.03918,
+            "seller_gini_at_10": 0.40352,
+            "evidence_statement": "Implements Group 3 ranking baseline with leakage-aware temporal train/test split and offline ranking metric stack."
+          }
+        }
+      ]
+    },
+    {
+      "name": "registry_model_temporal_holdout",
+      "passed": true,
+      "observed": {
+        "model_id": "ranker_linear_relevance_v1",
+        "model_type": "deterministic_linear_relevance_baseline",
+        "training_window_days": [
+          1,
+          60
+        ],
+        "evaluation_window_days": [
+          61,
+          90
+        ],
+        "promotion_gate": "baseline_logged_not_promoted",
+        "temporal_holdout_used": true,
+        "metrics": {
+          "artifact": "pulserank_ranking_baseline_report_v1",
+          "status": "pass",
+          "ranker_type": "deterministic_linear_relevance_baseline",
+          "model_note": "Lightweight interpretable ranking baseline using session/category affinity, price fit, freshness, popularity, latent quality, and train-period target rates.",
+          "temporal_split_enforced": true,
+          "train_sessions": 2806,
+          "holdout_sessions": 1326,
+          "ranked_rows_written": 41320,
+          "holdout_purchase_sessions_evaluated": 150,
+          "holdout_ndcg_at_10": 0.13341,
+          "holdout_mrr": 0.11389,
+          "holdout_precision_at_10": 0.02533,
+          "holdout_recall_at_10": 0.24333,
+          "holdout_map_at_10": 0.10015,
+          "popularity_ndcg_at_10": 0.17259,
+          "ndcg_delta_vs_popularity": -0.03918,
+          "seller_gini_at_10": 0.40352,
+          "evidence_statement": "Implements Group 3 ranking baseline with leakage-aware temporal train/test split and offline ranking metric stack."
+        }
+      }
+    }
+  ],
+  "evidence_statement": "Validates Group 3 ranking baseline, temporal holdout enforcement, ranked list outputs, offline evaluation log, and model registry."
+}

@@ -1,0 +1,9 @@
+{
+  "artifact": "pulserank_group3_ranking_baseline_report_v1",
+  "status": "pass",
+  "ranked_lists_path": "data/processed/ranked_lists.csv",
+  "ranking_report_path": "outputs/evidence/ranking_baseline_report.json",
+  "offline_eval_path": "outputs/evidence/offline_eval_log.json",
+  "model_registry_path": "outputs/evidence/model_registry.json",
+  "evidence_statement": "Group 3 ranking baseline complete with temporal holdout and offline metric stack."
+}
