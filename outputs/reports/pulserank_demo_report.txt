@@ -1,0 +1,29 @@
+PulseRank Demo Report
+=====================
+
+Status: pass
+
+One-line:
+Production-simulated marketplace recommendation and ranking decision system with IPS bias correction, delayed attribution, exposure governance, offline A/B simulation, and evidence artifacts.
+
+Core numbers:
+- Sessions: 4132
+- Items: 650
+- Sellers: 80
+- Impressions: 41320
+- Purchases: 539
+- Display-rank coverage: 1.0
+- Hybrid Recall@100: 0.68986
+- Holdout NDCG@10: 0.13341
+- IPS-weighted NDCG@10: 0.52224
+- Seller Gini after rerank: 0.58228
+- Catalog coverage after rerank: 0.22615
+- A/B decision: HOLD_SIMULATED
+- MetaSignal-compatible events: 15
+- Failure scenarios: 15
+
+Truth boundary:
+Solo-built, non-production, production-simulated. No real production deployment, no real users served, no real online A/B test, no real revenue optimization claim.
+
+Resume claim:
+Built PulseRank, a production-simulated marketplace ranking system with display-rank impression logging, hybrid candidate generation, temporal holdout ranking evaluation, IPS position-bias correction, delayed conversion attribution, seller/category exposure governance, offline A/B simulation, failure recovery scenarios, and reproducible evidence artifacts.

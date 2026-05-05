@@ -1,0 +1,187 @@
+{
+  "artifact": "pulserank_failure_recovery_report_v1",
+  "status": "pass",
+  "scenario_count": 15,
+  "failure_states": {
+    "BLOCKED": 6,
+    "RECOVERED_WITH_FALLBACK": 2,
+    "RECOVERED_WITH_CLIPPING": 1,
+    "REVIEW_REQUIRED": 2,
+    "HOLD": 2,
+    "THROTTLED": 1,
+    "CLAIM_CORRECTED": 1
+  },
+  "severity_mix": {
+    "critical": 6,
+    "high": 5,
+    "medium": 4
+  },
+  "scenarios": [
+    {
+      "scenario_id": "F-01",
+      "name": "missing_display_rank",
+      "trigger": "impression_log has impressions without display_rank",
+      "detection_signal": "display_rank_coverage < 1.0",
+      "action": "block IPS correction and fail corpus validation",
+      "final_state": "BLOCKED",
+      "severity": "critical",
+      "artifact_reference": "outputs/evidence/schema_manifest.json",
+      "interview_point": "Position-bias correction is impossible without logged display rank."
+    },
+    {
+      "scenario_id": "F-02",
+      "name": "invalid_display_rank_range",
+      "trigger": "display_rank falls outside 1..10",
+      "detection_signal": "display_rank_range_1_to_10 validation fails",
+      "action": "quarantine malformed impressions",
+      "final_state": "BLOCKED",
+      "severity": "critical",
+      "artifact_reference": "outputs/validation/corpus_validation_v1.json",
+      "interview_point": "Ranking logs need strict position semantics before evaluation."
+    },
+    {
+      "scenario_id": "F-03",
+      "name": "low_candidate_recall",
+      "trigger": "hybrid candidate recall drops below popularity baseline by large margin",
+      "detection_signal": "candidate_recall_report.hybrid_recall_at_100 regression",
+      "action": "fallback to popularity + content hybrid and mark retrieval quality degraded",
+      "final_state": "RECOVERED_WITH_FALLBACK",
+      "severity": "high",
+      "artifact_reference": "outputs/evidence/candidate_recall_report.json",
+      "interview_point": "Items not retrieved cannot be ranked; retrieval recall is a first-order gate."
+    },
+    {
+      "scenario_id": "F-04",
+      "name": "temporal_split_not_used",
+      "trigger": "ranking baseline evaluated with random split",
+      "detection_signal": "offline_eval_log.split_strategy != temporal_holdout",
+      "action": "reject evaluation and require temporal holdout rerun",
+      "final_state": "BLOCKED",
+      "severity": "critical",
+      "artifact_reference": "outputs/evidence/offline_eval_log.json",
+      "interview_point": "Random split can leak future popularity and behavior into ranking evaluation."
+    },
+    {
+      "scenario_id": "F-05",
+      "name": "propensity_missing_or_zero",
+      "trigger": "rank-level click propensity missing or zero",
+      "detection_signal": "propensity_by_rank_report has zero clipped_propensity",
+      "action": "apply propensity floor and rerun IPS validation",
+      "final_state": "RECOVERED_WITH_CLIPPING",
+      "severity": "critical",
+      "artifact_reference": "outputs/evidence/propensity_by_rank_report.json",
+      "interview_point": "IPS can explode when propensities are too small; clipping controls variance."
+    },
+    {
+      "scenario_id": "F-06",
+      "name": "ips_variance_explosion",
+      "trigger": "IPS weight distribution has extreme max weight",
+      "detection_signal": "bias_correction_report.weight_distribution.max_weight over cap",
+      "action": "increase propensity floor, report limitation, and mark estimate high-variance",
+      "final_state": "REVIEW_REQUIRED",
+      "severity": "high",
+      "artifact_reference": "outputs/evidence/bias_correction_report.json",
+      "interview_point": "Debiasing improves validity but can increase variance."
+    },
+    {
+      "scenario_id": "F-07",
+      "name": "seller_exposure_concentration",
+      "trigger": "top-10 exposure over-concentrates sellers",
+      "detection_signal": "diversity_guardrail_log.after_rerank.seller_gini_at_10 > threshold",
+      "action": "hold promotion and rerun governed reranker with stricter seller cap",
+      "final_state": "HOLD",
+      "severity": "high",
+      "artifact_reference": "outputs/evidence/diversity_guardrail_log.json",
+      "interview_point": "Marketplace ranking is not just relevance; supply-side exposure matters."
+    },
+    {
+      "scenario_id": "F-08",
+      "name": "category_monoculture",
+      "trigger": "top-10 dominated by one category",
+      "detection_signal": "mean_category_max_share_at_10 crosses review band",
+      "action": "apply MMR/category constraint and monitor relevance tradeoff",
+      "final_state": "REVIEW_REQUIRED",
+      "severity": "medium",
+      "artifact_reference": "outputs/evidence/diversity_guardrail_log.json",
+      "interview_point": "Diversity constraints are a deliberate relevance-vs-marketplace-health tradeoff."
+    },
+    {
+      "scenario_id": "F-09",
+      "name": "delayed_attribution_window_missing",
+      "trigger": "only same-session click labels available",
+      "detection_signal": "conversion_attribution_report missing 1/3/7-day windows",
+      "action": "block A/B simulation until delayed attribution is generated",
+      "final_state": "BLOCKED",
+      "severity": "critical",
+      "artifact_reference": "outputs/evidence/conversion_attribution_report.json",
+      "interview_point": "CTR alone is insufficient; purchases arrive after impression time."
+    },
+    {
+      "scenario_id": "F-10",
+      "name": "return_adjustment_missing",
+      "trigger": "attributed revenue ignores returns",
+      "detection_signal": "net_revenue_after_returns missing from attribution report",
+      "action": "block primary metric readout and regenerate return-adjusted labels",
+      "final_state": "BLOCKED",
+      "severity": "high",
+      "artifact_reference": "outputs/evidence/conversion_attribution_report.json",
+      "interview_point": "Revenue/session should be adjusted for returns in marketplace evaluation."
+    },
+    {
+      "scenario_id": "F-11",
+      "name": "guardrail_breach_despite_primary_lift",
+      "trigger": "treatment improves net RPS but violates seller/category/return guardrail",
+      "detection_signal": "ab_simulation_results.guardrails_pass is false",
+      "action": "decision becomes HOLD_SIMULATED",
+      "final_state": "HOLD",
+      "severity": "high",
+      "artifact_reference": "outputs/evidence/ab_simulation_results.json",
+      "interview_point": "A positive primary metric is not enough to ship if guardrails fail."
+    },
+    {
+      "scenario_id": "F-12",
+      "name": "metasignal_export_schema_mismatch",
+      "trigger": "PulseRank event export missing metric_name or unit_of_analysis",
+      "detection_signal": "metasignal_integration_events schema validation fails",
+      "action": "block integration export and regenerate schema-compatible events",
+      "final_state": "BLOCKED",
+      "severity": "medium",
+      "artifact_reference": "outputs/evidence/metasignal_integration_events.json",
+      "interview_point": "Portfolio integration should be schema-compatible, not hand-wavy."
+    },
+    {
+      "scenario_id": "F-13",
+      "name": "cold_start_items_starved",
+      "trigger": "new or sparse-history items receive no exposure",
+      "detection_signal": "cold_start_events count below expected and catalog coverage low",
+      "action": "trigger content-based fallback and exploration allocation",
+      "final_state": "RECOVERED_WITH_FALLBACK",
+      "severity": "medium",
+      "artifact_reference": "outputs/evidence/corpus_summary.json",
+      "interview_point": "Ranking systems need cold-start fallback, not only popularity loops."
+    },
+    {
+      "scenario_id": "F-14",
+      "name": "exploration_over_allocation",
+      "trigger": "exploration traffic exceeds configured cap",
+      "detection_signal": "exploration share above hard_cap",
+      "action": "throttle exploration and prioritize deterministic ranking",
+      "final_state": "THROTTLED",
+      "severity": "medium",
+      "artifact_reference": "configs/policy_config.json",
+      "interview_point": "Exploration is useful but must be bounded by policy."
+    },
+    {
+      "scenario_id": "F-15",
+      "name": "offline_ab_overclaim",
+      "trigger": "offline simulation interpreted as real online experiment",
+      "detection_signal": "claim boundary check detects online A/B claim",
+      "action": "rewrite report to clarify offline simulation only",
+      "final_state": "CLAIM_CORRECTED",
+      "severity": "critical",
+      "artifact_reference": "docs/PULSERANK_ATTRIBUTION_AB.md",
+      "interview_point": "Truth boundary is part of the project quality, not a weakness."
+    }
+  ],
+  "evidence_statement": "Defines failure and recovery scenarios for PulseRank ranking-system reliability, evaluation validity, guardrail behavior, integration safety, and claim-boundary enforcement."
+}

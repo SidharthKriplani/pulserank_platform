@@ -1,0 +1,95 @@
+{
+  "artifact": "pulserank_demo_report_v1",
+  "status": "pass",
+  "project": "PulseRank",
+  "one_line": "Production-simulated marketplace recommendation and ranking decision system with IPS bias correction, delayed attribution, exposure governance, offline A/B simulation, and evidence artifacts.",
+  "truth_boundary": {
+    "build_type": "solo-built_non-production_production-simulated",
+    "not_claimed": [
+      "real production deployment",
+      "real users served",
+      "real production traffic",
+      "real online A/B test",
+      "real revenue optimization",
+      "real RL or contextual bandit optimization",
+      "real ad auction infrastructure"
+    ]
+  },
+  "core_numbers": {
+    "sessions": 4132,
+    "items": 650,
+    "sellers": 80,
+    "impressions": 41320,
+    "purchases": 539,
+    "display_rank_coverage": 1.0,
+    "hybrid_recall_at_100": 0.68986,
+    "holdout_ndcg_at_10": 0.13341,
+    "ips_weighted_ndcg_at_10": 0.52224,
+    "seller_gini_after_rerank": 0.58228,
+    "catalog_coverage_after_rerank": 0.22615,
+    "attribution_windows": [
+      1,
+      3,
+      7
+    ],
+    "ab_decision": "HOLD_SIMULATED",
+    "metasignal_event_count": 15,
+    "failure_scenarios": 15
+  },
+  "system_flow": [
+    "generate deterministic marketplace corpus",
+    "log impressions with display_rank",
+    "generate popularity/content/hybrid candidates",
+    "rank with temporal holdout evaluation",
+    "estimate rank propensity and apply IPS correction",
+    "rerank using MMR, seller/category exposure, novelty, and coverage constraints",
+    "attribute delayed conversions over 1/3/7-day windows",
+    "run offline A/B simulation with guardrails",
+    "export MetaSignal-compatible metric events",
+    "validate failure/recovery and claim boundary"
+  ],
+  "artifact_inventory": {
+    "evidence_json_count": 18,
+    "validation_json_count": 7,
+    "report_json_count": 6,
+    "total_json_artifacts": 31
+  },
+  "evidence_files": [
+    "outputs/evidence/ab_simulation_results.json",
+    "outputs/evidence/bias_correction_report.json",
+    "outputs/evidence/candidate_generation_report.json",
+    "outputs/evidence/candidate_recall_report.json",
+    "outputs/evidence/candidate_samples.json",
+    "outputs/evidence/catalog_coverage_report.json",
+    "outputs/evidence/conversion_attribution_report.json",
+    "outputs/evidence/corpus_samples.json",
+    "outputs/evidence/corpus_summary.json",
+    "outputs/evidence/diversity_guardrail_log.json",
+    "outputs/evidence/diversity_report.json",
+    "outputs/evidence/metasignal_integration_events.json",
+    "outputs/evidence/model_registry.json",
+    "outputs/evidence/offline_eval_log.json",
+    "outputs/evidence/propensity_by_rank_report.json",
+    "outputs/evidence/ranking_baseline_report.json",
+    "outputs/evidence/schema_manifest.json"
+  ],
+  "validation_files": [
+    "outputs/validation/attribution_ab_validation_v1.json",
+    "outputs/validation/bias_correction_validation_v1.json",
+    "outputs/validation/candidate_generation_validation_v1.json",
+    "outputs/validation/corpus_validation_v1.json",
+    "outputs/validation/ranking_baseline_validation_v1.json",
+    "outputs/validation/reranking_constraints_validation_v1.json",
+    "outputs/validation/scaffold_validation_v1.json"
+  ],
+  "report_files": [
+    "outputs/reports/group1_corpus_report_v1.json",
+    "outputs/reports/group2_candidate_generation_report_v1.json",
+    "outputs/reports/group3_ranking_baseline_report_v1.json",
+    "outputs/reports/group4_bias_correction_report_v1.json",
+    "outputs/reports/group5_reranking_constraints_report_v1.json",
+    "outputs/reports/group6_attribution_ab_report_v1.json"
+  ],
+  "resume_claim": "Built PulseRank, a production-simulated marketplace ranking system with display-rank impression logging, hybrid candidate generation, temporal holdout ranking evaluation, IPS position-bias correction, delayed conversion attribution, seller/category exposure governance, offline A/B simulation, failure recovery scenarios, and reproducible evidence artifacts.",
+  "evidence_statement": "Final local demo report summarizes PulseRank build evidence and creates a single reviewer-facing project narrative."
+}

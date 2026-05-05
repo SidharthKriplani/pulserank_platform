@@ -1,0 +1,216 @@
+{
+  "artifact": "pulserank_demo_report_validation_v1",
+  "status": "pass",
+  "check_count": 37,
+  "passed_count": 37,
+  "checks": [
+    {
+      "name": "required_artifact_exists::outputs/evidence/corpus_summary.json",
+      "passed": true,
+      "observed": "outputs/evidence/corpus_summary.json"
+    },
+    {
+      "name": "required_artifact_exists::outputs/evidence/candidate_generation_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/candidate_generation_report.json"
+    },
+    {
+      "name": "required_artifact_exists::outputs/evidence/ranking_baseline_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/ranking_baseline_report.json"
+    },
+    {
+      "name": "required_artifact_exists::outputs/evidence/bias_correction_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/bias_correction_report.json"
+    },
+    {
+      "name": "required_artifact_exists::outputs/evidence/diversity_guardrail_log.json",
+      "passed": true,
+      "observed": "outputs/evidence/diversity_guardrail_log.json"
+    },
+    {
+      "name": "required_artifact_exists::outputs/evidence/conversion_attribution_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/conversion_attribution_report.json"
+    },
+    {
+      "name": "required_artifact_exists::outputs/evidence/ab_simulation_results.json",
+      "passed": true,
+      "observed": "outputs/evidence/ab_simulation_results.json"
+    },
+    {
+      "name": "required_artifact_exists::outputs/evidence/metasignal_integration_events.json",
+      "passed": true,
+      "observed": "outputs/evidence/metasignal_integration_events.json"
+    },
+    {
+      "name": "required_artifact_exists::outputs/evidence/failure_recovery_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/failure_recovery_report.json"
+    },
+    {
+      "name": "required_artifact_exists::outputs/reports/pulserank_demo_report.json",
+      "passed": true,
+      "observed": "outputs/reports/pulserank_demo_report.json"
+    },
+    {
+      "name": "required_artifact_exists::outputs/reports/pulserank_demo_report.txt",
+      "passed": true,
+      "observed": "outputs/reports/pulserank_demo_report.txt"
+    },
+    {
+      "name": "required_validation_exists::outputs/validation/scaffold_validation_v1.json",
+      "passed": true,
+      "observed": "outputs/validation/scaffold_validation_v1.json"
+    },
+    {
+      "name": "required_validation_pass::outputs/validation/scaffold_validation_v1.json",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "required_validation_exists::outputs/validation/corpus_validation_v1.json",
+      "passed": true,
+      "observed": "outputs/validation/corpus_validation_v1.json"
+    },
+    {
+      "name": "required_validation_pass::outputs/validation/corpus_validation_v1.json",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "required_validation_exists::outputs/validation/candidate_generation_validation_v1.json",
+      "passed": true,
+      "observed": "outputs/validation/candidate_generation_validation_v1.json"
+    },
+    {
+      "name": "required_validation_pass::outputs/validation/candidate_generation_validation_v1.json",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "required_validation_exists::outputs/validation/ranking_baseline_validation_v1.json",
+      "passed": true,
+      "observed": "outputs/validation/ranking_baseline_validation_v1.json"
+    },
+    {
+      "name": "required_validation_pass::outputs/validation/ranking_baseline_validation_v1.json",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "required_validation_exists::outputs/validation/bias_correction_validation_v1.json",
+      "passed": true,
+      "observed": "outputs/validation/bias_correction_validation_v1.json"
+    },
+    {
+      "name": "required_validation_pass::outputs/validation/bias_correction_validation_v1.json",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "required_validation_exists::outputs/validation/reranking_constraints_validation_v1.json",
+      "passed": true,
+      "observed": "outputs/validation/reranking_constraints_validation_v1.json"
+    },
+    {
+      "name": "required_validation_pass::outputs/validation/reranking_constraints_validation_v1.json",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "required_validation_exists::outputs/validation/attribution_ab_validation_v1.json",
+      "passed": true,
+      "observed": "outputs/validation/attribution_ab_validation_v1.json"
+    },
+    {
+      "name": "required_validation_pass::outputs/validation/attribution_ab_validation_v1.json",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "failure_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "failure_scenario_count_min_15",
+      "passed": true,
+      "observed": 15
+    },
+    {
+      "name": "failure_has_blocked_state",
+      "passed": true,
+      "observed": {
+        "BLOCKED": 6,
+        "RECOVERED_WITH_FALLBACK": 2,
+        "RECOVERED_WITH_CLIPPING": 1,
+        "REVIEW_REQUIRED": 2,
+        "HOLD": 2,
+        "THROTTLED": 1,
+        "CLAIM_CORRECTED": 1
+      }
+    },
+    {
+      "name": "demo_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "demo_has_resume_claim",
+      "passed": true,
+      "observed": "Built PulseRank, a production-simulated marketplace ranking system with display-rank impression logging, hybrid candidate generation, temporal holdout ranking evaluation, IPS position-bias correction, delayed conversion attribution, seller/category exposure governance, offline A/B simulation, failure recovery scenarios, and reproducible evidence artifacts."
+    },
+    {
+      "name": "demo_has_truth_boundary",
+      "passed": true,
+      "observed": {
+        "build_type": "solo-built_non-production_production-simulated",
+        "not_claimed": [
+          "real production deployment",
+          "real users served",
+          "real production traffic",
+          "real online A/B test",
+          "real revenue optimization",
+          "real RL or contextual bandit optimization",
+          "real ad auction infrastructure"
+        ]
+      }
+    },
+    {
+      "name": "demo_mentions_ips",
+      "passed": true,
+      "observed": "Production-simulated marketplace recommendation and ranking decision system with IPS bias correction, delayed attribution, exposure governance, offline A/B simulation, and evidence artifacts."
+    },
+    {
+      "name": "demo_ab_decision_matches_ab_report",
+      "passed": true,
+      "observed": {
+        "demo": "HOLD_SIMULATED",
+        "ab": "HOLD_SIMULATED"
+      }
+    },
+    {
+      "name": "display_rank_coverage_one",
+      "passed": true,
+      "observed": 1.0
+    },
+    {
+      "name": "bias_report_method_ips",
+      "passed": true,
+      "observed": "inverse_propensity_scoring"
+    },
+    {
+      "name": "txt_report_contains_truth_boundary",
+      "passed": true,
+      "observed": "PulseRank Demo Report\n=====================\n\nStatus: pass\n\nOne-line:\nProduction-simulated marketplace recommendation and ranking decision system with IPS bias correction, delayed attribution, exposure"
+    },
+    {
+      "name": "txt_report_contains_resume_claim",
+      "passed": true,
+      "observed": "PulseRank Demo Report\n=====================\n\nStatus: pass\n\nOne-line:\nProduction-simulated marketplace recommendation and ranking decision system with IPS bias correction, delayed attribution, exposure governance, offline A/B simulation, and evidence artifacts.\n\nCore numbers:\n- Sessions: 4132\n- Items"
+    }
+  ],
+  "evidence_statement": "Validates PulseRank Group 7 failure scenarios, final demo report, artifact inventory, validation chain, truth boundary, and resume claim."
+}
