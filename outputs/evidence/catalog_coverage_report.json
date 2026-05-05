@@ -1,0 +1,9 @@
+{
+  "artifact": "pulserank_catalog_coverage_report_v1",
+  "status": "pass",
+  "raw_catalog_coverage_at_10": 0.15846,
+  "reranked_catalog_coverage_at_10": 0.22615,
+  "coverage_delta": 0.06769,
+  "total_catalog_items": 650,
+  "evidence_statement": "Measures how much of the item catalog receives top-10 exposure before and after reranking."
+}

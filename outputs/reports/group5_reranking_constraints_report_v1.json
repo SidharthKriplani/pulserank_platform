@@ -1,0 +1,10 @@
+{
+  "artifact": "pulserank_group5_reranking_constraints_report_v1",
+  "status": "pass",
+  "reranked_lists_path": "data/processed/reranked_lists.csv",
+  "rerank_audit_log_path": "data/processed/rerank_audit_log.csv",
+  "diversity_guardrail_path": "outputs/evidence/diversity_guardrail_log.json",
+  "diversity_report_path": "outputs/evidence/diversity_report.json",
+  "coverage_report_path": "outputs/evidence/catalog_coverage_report.json",
+  "evidence_statement": "Group 5 reranking constraints complete with MMR-style diversity, seller exposure caps, category share monitoring, novelty, and coverage evidence."
+}

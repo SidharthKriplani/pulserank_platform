@@ -1,0 +1,346 @@
+{
+  "artifact": "pulserank_reranking_constraints_validation_v1",
+  "status": "pass",
+  "check_count": 34,
+  "passed_count": 34,
+  "checks": [
+    {
+      "name": "exists::data/processed/reranked_lists.csv",
+      "passed": true,
+      "observed": "data/processed/reranked_lists.csv"
+    },
+    {
+      "name": "exists::data/processed/rerank_audit_log.csv",
+      "passed": true,
+      "observed": "data/processed/rerank_audit_log.csv"
+    },
+    {
+      "name": "exists::outputs/evidence/diversity_guardrail_log.json",
+      "passed": true,
+      "observed": "outputs/evidence/diversity_guardrail_log.json"
+    },
+    {
+      "name": "exists::outputs/evidence/diversity_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/diversity_report.json"
+    },
+    {
+      "name": "exists::outputs/evidence/catalog_coverage_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/catalog_coverage_report.json"
+    },
+    {
+      "name": "exists::outputs/reports/group5_reranking_constraints_report_v1.json",
+      "passed": true,
+      "observed": "outputs/reports/group5_reranking_constraints_report_v1.json"
+    },
+    {
+      "name": "reranked_rows_positive",
+      "passed": true,
+      "observed": 41320
+    },
+    {
+      "name": "reranked_rows_10_per_session",
+      "passed": true,
+      "observed": {
+        "reranked": 41320,
+        "sessions_x10": 41320
+      }
+    },
+    {
+      "name": "audit_rows_match_sessions",
+      "passed": true,
+      "observed": {
+        "audit": 4132,
+        "sessions": 4132
+      }
+    },
+    {
+      "name": "column_exists::session_id",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "reranked_position",
+        "pre_rerank_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "category_l2",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::item_id",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "reranked_position",
+        "pre_rerank_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "category_l2",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::reranked_position",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "reranked_position",
+        "pre_rerank_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "category_l2",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::pre_rerank_score",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "reranked_position",
+        "pre_rerank_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "category_l2",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::label_purchase_in_session",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "reranked_position",
+        "pre_rerank_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "category_l2",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::category_l1",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "reranked_position",
+        "pre_rerank_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "category_l2",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::seller_id",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "reranked_position",
+        "pre_rerank_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "category_l2",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::simulated_day",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "reranked_position",
+        "pre_rerank_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "category_l2",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "column_exists::split",
+      "passed": true,
+      "observed": [
+        "session_id",
+        "item_id",
+        "reranked_position",
+        "pre_rerank_score",
+        "label_purchase_in_session",
+        "category_l1",
+        "category_l2",
+        "seller_id",
+        "simulated_day",
+        "split"
+      ]
+    },
+    {
+      "name": "reranked_position_range_1_10",
+      "passed": true,
+      "observed": {
+        "min": 1,
+        "max": 10
+      }
+    },
+    {
+      "name": "audit_has_unique_sellers",
+      "passed": true,
+      "observed": "unique_sellers positive"
+    },
+    {
+      "name": "audit_has_unique_categories",
+      "passed": true,
+      "observed": "unique_categories positive"
+    },
+    {
+      "name": "guardrail_status_valid",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "guardrail_has_constraints",
+      "passed": true,
+      "observed": {
+        "mmr_lambda": 0.7,
+        "seller_gini_threshold": 0.65,
+        "category_top10_max_share": 0.5,
+        "ild_floor": 0.3,
+        "max_per_seller_per_top10": 2
+      }
+    },
+    {
+      "name": "guardrail_has_before_after",
+      "passed": true,
+      "observed": [
+        "artifact",
+        "status",
+        "constraints",
+        "before_rerank",
+        "after_rerank",
+        "tradeoff_summary",
+        "guardrail_failures",
+        "evidence_statement"
+      ]
+    },
+    {
+      "name": "seller_gini_threshold_recorded",
+      "passed": true,
+      "observed": {
+        "mmr_lambda": 0.7,
+        "seller_gini_threshold": 0.65,
+        "category_top10_max_share": 0.5,
+        "ild_floor": 0.3,
+        "max_per_seller_per_top10": 2
+      }
+    },
+    {
+      "name": "mmr_lambda_recorded",
+      "passed": true,
+      "observed": {
+        "mmr_lambda": 0.7,
+        "seller_gini_threshold": 0.65,
+        "category_top10_max_share": 0.5,
+        "ild_floor": 0.3,
+        "max_per_seller_per_top10": 2
+      }
+    },
+    {
+      "name": "after_seller_gini_present",
+      "passed": true,
+      "observed": {
+        "seller_gini_at_10": 0.58228,
+        "mean_ild_at_10": 0.71139,
+        "mean_novelty_at_10": 0.06762,
+        "mean_category_max_share_at_10": 0.51145,
+        "catalog_coverage_at_10": 0.22615,
+        "ndcg_at_10": 0.09249,
+        "recall_at_10": 0.17
+      }
+    },
+    {
+      "name": "after_ild_present",
+      "passed": true,
+      "observed": {
+        "seller_gini_at_10": 0.58228,
+        "mean_ild_at_10": 0.71139,
+        "mean_novelty_at_10": 0.06762,
+        "mean_category_max_share_at_10": 0.51145,
+        "catalog_coverage_at_10": 0.22615,
+        "ndcg_at_10": 0.09249,
+        "recall_at_10": 0.17
+      }
+    },
+    {
+      "name": "after_coverage_present",
+      "passed": true,
+      "observed": {
+        "seller_gini_at_10": 0.58228,
+        "mean_ild_at_10": 0.71139,
+        "mean_novelty_at_10": 0.06762,
+        "mean_category_max_share_at_10": 0.51145,
+        "catalog_coverage_at_10": 0.22615,
+        "ndcg_at_10": 0.09249,
+        "recall_at_10": 0.17
+      }
+    },
+    {
+      "name": "diversity_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "diversity_sessions_positive",
+      "passed": true,
+      "observed": 4132
+    },
+    {
+      "name": "coverage_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "coverage_values_present",
+      "passed": true,
+      "observed": {
+        "artifact": "pulserank_catalog_coverage_report_v1",
+        "status": "pass",
+        "raw_catalog_coverage_at_10": 0.15846,
+        "reranked_catalog_coverage_at_10": 0.22615,
+        "coverage_delta": 0.06769,
+        "total_catalog_items": 650,
+        "evidence_statement": "Measures how much of the item catalog receives top-10 exposure before and after reranking."
+      }
+    },
+    {
+      "name": "group_status_pass",
+      "passed": true,
+      "observed": "pass"
+    }
+  ],
+  "evidence_statement": "Validates Group 5 reranking constraints, seller/category exposure governance, diversity guardrail log, catalog coverage, and audit trail."
+}

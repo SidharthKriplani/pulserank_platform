@@ -1,0 +1,12 @@
+{
+  "artifact": "pulserank_diversity_report_v1",
+  "status": "pass",
+  "sessions_reranked": 4132,
+  "holdout_sessions": 1326,
+  "reranked_rows_written": 41320,
+  "audit_rows_written": 4132,
+  "mean_unique_sellers_per_top10": 9.58325,
+  "mean_unique_categories_per_top10": 3.98766,
+  "soft_block_sessions": 0,
+  "evidence_statement": "Summarizes per-session reranking diversity and marketplace exposure behavior."
+}

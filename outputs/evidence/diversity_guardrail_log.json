@@ -1,0 +1,38 @@
+{
+  "artifact": "pulserank_diversity_guardrail_log_v1",
+  "status": "pass",
+  "constraints": {
+    "mmr_lambda": 0.7,
+    "seller_gini_threshold": 0.65,
+    "category_top10_max_share": 0.5,
+    "ild_floor": 0.3,
+    "max_per_seller_per_top10": 2
+  },
+  "before_rerank": {
+    "seller_gini_at_10": 0.40352,
+    "mean_ild_at_10": 0.58562,
+    "mean_novelty_at_10": 0.07837,
+    "mean_category_max_share_at_10": 0.87994,
+    "catalog_coverage_at_10": 0.15846,
+    "ndcg_at_10": 0.13644,
+    "recall_at_10": 0.24333
+  },
+  "after_rerank": {
+    "seller_gini_at_10": 0.58228,
+    "mean_ild_at_10": 0.71139,
+    "mean_novelty_at_10": 0.06762,
+    "mean_category_max_share_at_10": 0.51145,
+    "catalog_coverage_at_10": 0.22615,
+    "ndcg_at_10": 0.09249,
+    "recall_at_10": 0.17
+  },
+  "tradeoff_summary": {
+    "seller_gini_delta": 0.17875,
+    "ild_delta": 0.12577,
+    "novelty_delta": -0.01075,
+    "coverage_delta": 0.06769,
+    "ndcg_delta": -0.04395
+  },
+  "guardrail_failures": [],
+  "evidence_statement": "Applies governed reranking after baseline ranking to balance relevance against seller exposure, category concentration, novelty, and list diversity."
+}
