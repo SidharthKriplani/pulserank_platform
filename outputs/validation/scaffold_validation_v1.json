@@ -1,0 +1,144 @@
+{
+  "artifact": "pulserank_scaffold_validation_v1",
+  "status": "pass",
+  "check_count": 27,
+  "passed_count": 27,
+  "checks": [
+    {
+      "name": "path_exists::README.md",
+      "passed": true,
+      "observed": "README.md"
+    },
+    {
+      "name": "path_exists::requirements.txt",
+      "passed": true,
+      "observed": "requirements.txt"
+    },
+    {
+      "name": "path_exists::pyproject.toml",
+      "passed": true,
+      "observed": "pyproject.toml"
+    },
+    {
+      "name": "path_exists::configs/policy_config.json",
+      "passed": true,
+      "observed": "configs/policy_config.json"
+    },
+    {
+      "name": "path_exists::docs/PULSERANK_SCOPE.md",
+      "passed": true,
+      "observed": "docs/PULSERANK_SCOPE.md"
+    },
+    {
+      "name": "path_exists::docs/PULSERANK_BUILD_GROUPS.md",
+      "passed": true,
+      "observed": "docs/PULSERANK_BUILD_GROUPS.md"
+    },
+    {
+      "name": "path_exists::src/pulserank/__init__.py",
+      "passed": true,
+      "observed": "src/pulserank/__init__.py"
+    },
+    {
+      "name": "path_exists::src/pulserank/core/constants.py",
+      "passed": true,
+      "observed": "src/pulserank/core/constants.py"
+    },
+    {
+      "name": "path_exists::src/pulserank/simulation/__init__.py",
+      "passed": true,
+      "observed": "src/pulserank/simulation/__init__.py"
+    },
+    {
+      "name": "path_exists::src/pulserank/ranking/__init__.py",
+      "passed": true,
+      "observed": "src/pulserank/ranking/__init__.py"
+    },
+    {
+      "name": "path_exists::src/pulserank/evaluation/__init__.py",
+      "passed": true,
+      "observed": "src/pulserank/evaluation/__init__.py"
+    },
+    {
+      "name": "path_exists::src/pulserank/artifacts/__init__.py",
+      "passed": true,
+      "observed": "src/pulserank/artifacts/__init__.py"
+    },
+    {
+      "name": "path_exists::outputs/evidence",
+      "passed": true,
+      "observed": "outputs/evidence"
+    },
+    {
+      "name": "path_exists::outputs/reports",
+      "passed": true,
+      "observed": "outputs/reports"
+    },
+    {
+      "name": "path_exists::outputs/validation",
+      "passed": true,
+      "observed": "outputs/validation"
+    },
+    {
+      "name": "path_exists::outputs/dashboard",
+      "passed": true,
+      "observed": "outputs/dashboard"
+    },
+    {
+      "name": "config::display_rank_required",
+      "passed": true,
+      "observed": "display_rank_required"
+    },
+    {
+      "name": "config::propensity_floor",
+      "passed": true,
+      "observed": "propensity_floor"
+    },
+    {
+      "name": "config::seller_gini_threshold",
+      "passed": true,
+      "observed": "seller_gini_threshold"
+    },
+    {
+      "name": "config::attribution_windows",
+      "passed": true,
+      "observed": "attribution_windows"
+    },
+    {
+      "name": "config::temporal_holdout_required",
+      "passed": true,
+      "observed": "temporal_holdout_required"
+    },
+    {
+      "name": "readme_contains::Production-simulated marketplace recommendation",
+      "passed": true,
+      "observed": "Production-simulated marketplace recommendation"
+    },
+    {
+      "name": "readme_contains::IPS position-bias correction",
+      "passed": true,
+      "observed": "IPS position-bias correction"
+    },
+    {
+      "name": "readme_contains::delayed conversion attribution",
+      "passed": true,
+      "observed": "delayed conversion attribution"
+    },
+    {
+      "name": "readme_contains::seller/category exposure governance",
+      "passed": true,
+      "observed": "seller/category exposure governance"
+    },
+    {
+      "name": "readme_contains::Claim Boundary",
+      "passed": true,
+      "observed": "Claim Boundary"
+    },
+    {
+      "name": "readme_contains::real online A/B test",
+      "passed": true,
+      "observed": "real online A/B test"
+    }
+  ],
+  "evidence_statement": "Validates PulseRank Group 0 repo foundation, config, documentation, package scaffold, and truth boundary."
+}
