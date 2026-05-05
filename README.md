@@ -20,6 +20,14 @@
 
 ---
 
+## Why PulseRank exists
+
+Offline recommendation metrics lie. A model trained on marketplace click data looks significantly worse than it actually is — because items shown at rank 1 get 8× the click rate of items at rank 10, regardless of quality. Naive NDCG bakes this position bias directly into the evaluation: PulseRank's baseline ranker scores NDCG@10 = 0.134 on biased labels. After IPS correction it scores 0.522 — the same model, 4× better, once you stop penalising it for decisions the display layer made.
+
+PulseRank builds the full pipeline that most recommendation portfolios skip: logging propensity at impression time, estimating position-click curves, applying IPS debiasing, enforcing seller exposure constraints, attributing conversions with a 30-day window, and making a structured A/B decision against a temporal holdout — with every result in a versioned JSON artifact.
+
+---
+
 ## Architecture
 
 ```mermaid
