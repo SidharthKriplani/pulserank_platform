@@ -1,0 +1,20 @@
+{
+  "artifact": "pulserank_dashboard_validation_v1",
+  "status": "pass",
+  "check_count": 3,
+  "passed_count": 3,
+  "checks": [
+    {
+      "name": "dashboard_html_exists",
+      "passed": true
+    },
+    {
+      "name": "docs_index_exists",
+      "passed": true
+    },
+    {
+      "name": "readme_polished",
+      "passed": true
+    }
+  ]
+}

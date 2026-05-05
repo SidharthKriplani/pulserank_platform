@@ -1,0 +1,7 @@
+{
+  "artifact": "pulserank_dashboard_manifest_v1",
+  "status": "pass",
+  "dashboard_path": "outputs/dashboard/index.html",
+  "github_pages_path": "docs/index.html",
+  "total_json_artifacts": 33
+}

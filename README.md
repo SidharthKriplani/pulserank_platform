@@ -1,63 +1,57 @@
 # PulseRank Platform
 
-**Production-simulated marketplace recommendation and ranking decision system.**
+**Production-simulated marketplace recommendation and ranking decision system with IPS bias correction, delayed attribution, exposure governance, offline A/B simulation, and evidence artifacts.**
 
 <p>
-  <img alt="Status" src="https://img.shields.io/badge/Status-Active%20Build-2ea44f?style=for-the-badge">
-  <img alt="Ranking" src="https://img.shields.io/badge/Ranking-Marketplace%20Decision%20System-2563eb?style=for-the-badge">
+  <a href="./docs/index.html"><img alt="Dashboard" src="https://img.shields.io/badge/Live%20Dashboard-GitHub%20Pages-2ea44f?style=for-the-badge"></a>
+  <img alt="Status" src="https://img.shields.io/badge/Status-PASS-22c55e?style=for-the-badge">
+  <img alt="Decision" src="https://img.shields.io/badge/A%2FB%20Decision-HOLD_SIMULATED-f59e0b?style=for-the-badge">
   <img alt="IPS" src="https://img.shields.io/badge/IPS-Position%20Bias%20Correction-7c3aed?style=for-the-badge">
-  <img alt="Attribution" src="https://img.shields.io/badge/Attribution-Delayed%20Conversion-f59e0b?style=for-the-badge">
 </p>
 
-PulseRank is a solo-built, non-production, production-simulated ranking system for marketplace recommendation workflows.
+<p>
+  <img alt="Display Rank" src="https://img.shields.io/badge/Display%20Rank%20Coverage-1.0-22c55e?style=flat-square">
+  <img alt="Hybrid Recall" src="https://img.shields.io/badge/Hybrid%20Recall%40100-0.68986-0ea5e9?style=flat-square">
+  <img alt="IPS NDCG" src="https://img.shields.io/badge/IPS%20NDCG%4010-0.52224-8b5cf6?style=flat-square">
+  <img alt="Artifacts" src="https://img.shields.io/badge/JSON%20Artifacts-33-f97316?style=flat-square">
+  <img alt="Failures" src="https://img.shields.io/badge/Failure%20Scenarios-15-ef4444?style=flat-square">
+</p>
 
-It is designed to demonstrate ranking-system judgment beyond a recommender notebook:
+PulseRank is not a recommender notebook. It is a production-simulated ranking decision system that demonstrates how marketplace recommendations should be logged, evaluated, debiased, governed, and defended.
 
-- display-rank impression logging
-- candidate generation
-- ranking baseline
-- IPS position-bias correction
-- propensity clipping
-- MMR reranking
-- seller/category exposure governance
-- cold-start and exploration policy
-- delayed conversion attribution
-- offline evaluation harness
-- offline A/B simulation
-- failure and recovery scenarios
-- evidence artifacts and demo report
+## Live Dashboard
 
-## At a Glance
+Open locally:
 
-| Layer | What it proves |
-|---|---|
-| Impression logging | Every recommendation impression must carry display_rank |
-| IPS correction | Logged clicks are position-confounded and must be debiased |
-| Delayed attribution | CTR is not enough; purchases arrive after impressions |
-| Reranking constraints | Final ranking is not raw model top-K |
-| Seller exposure | Marketplace health requires exposure governance |
-| Offline evaluation | Ranking requires relevance, diversity, coverage, business, and bias metrics |
-| A/B simulation | Ranking changes must connect to CVR, revenue/session, and guardrails |
-| Evidence artifacts | Every claim must be backed by generated files |
+    open outputs/dashboard/index.html
 
-## Run Validation
+GitHub Pages source:
 
-    PYTHONPATH=. python3 scripts/validate_scaffold_v1.py
+    Branch: main
+    Folder: /docs
+
+## Key Results
+
+| Evidence | Result |
+|---|---:|
+| Sessions | 4132 |
+| Items | 650 |
+| Impressions | 41320 |
+| Purchases | 539 |
+| Display-rank coverage | 1.0 |
+| Hybrid Recall@100 | 0.68986 |
+| Holdout NDCG@10 | 0.13341 |
+| IPS-weighted NDCG@10 | 0.52224 |
+| After seller Gini@10 | 0.58228 |
+| After catalog coverage@10 | 0.22615 |
+| MetaSignal-compatible events | 15 |
+| Failure scenarios | 15 |
+| Offline A/B decision | HOLD_SIMULATED |
+
+## Resume-Safe Claim
+
+Built PulseRank, a production-simulated marketplace ranking system with display-rank impression logging, hybrid candidate generation, temporal holdout ranking evaluation, IPS position-bias correction, delayed conversion attribution, seller/category exposure governance, offline A/B simulation, failure recovery scenarios, and reproducible evidence artifacts.
 
 ## Claim Boundary
 
-PulseRank is solo-built, non-production, and production-simulated.
-
-It does not claim:
-
-- real production deployment
-- real users served
-- real production traffic
-- real online A/B test
-- real revenue optimization
-- real RL or contextual bandit optimization
-- real ad auction infrastructure
-
-## Status
-
-Group 0 foundation is active. Core implementation begins with corpus generation and impression logging.
+PulseRank is solo-built, non-production, and production-simulated. It does **not** claim real production deployment, real users, real traffic, real online A/B testing, real revenue optimization, real RL, real contextual bandits, or real ad-auction infrastructure.

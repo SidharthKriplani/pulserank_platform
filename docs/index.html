@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PulseRank Evidence Dashboard</title>
+<style>
+body{margin:0;font-family:Inter,system-ui;background:linear-gradient(135deg,#07111f,#172554,#312e81);color:#f8fafc}
+.wrap{max-width:1100px;margin:auto;padding:52px 24px}
+.hero,.card,.section{background:#0f172acc;border:1px solid #ffffff22;border-radius:24px;padding:28px;margin:18px 0;box-shadow:0 22px 70px #0006}
+h1{font-size:64px;line-height:.95;margin:0 0 20px;letter-spacing:-.06em}
+p{color:#cbd5e1;font-size:18px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.label{color:#a9b4c4;text-transform:uppercase;font-size:12px;font-weight:800;letter-spacing:.12em}
+.value{font-size:30px;font-weight:900;margin-top:8px}
+.pill{display:inline-block;border-radius:999px;padding:8px 12px;margin:0 8px 12px 0;font-size:12px;font-weight:800;text-transform:uppercase}
+.green{background:#22c55e33;color:#86efac}.amber{background:#f59e0b33;color:#fcd34d}.blue{background:#3b82f633;color:#bfdbfe}.purple{background:#8b5cf633;color:#ddd6fe}
+table{width:100%;border-collapse:collapse}td{padding:12px;border-bottom:1px solid #ffffff22}td:first-child{color:#a9b4c4;font-weight:800}
+.code{background:#020617;border-radius:16px;padding:18px;color:#d1fae5;white-space:pre-wrap}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}h1{font-size:44px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero">
+<span class="pill green">PASS</span><span class="pill amber">HOLD_SIMULATED</span><span class="pill blue">IPS Bias Correction</span><span class="pill purple">Ranking Governance</span>
+<h1>PulseRank Evidence Dashboard</h1>
+<p>Production-simulated marketplace ranking system with display-rank logging, candidate generation, temporal holdout evaluation, IPS correction, delayed attribution, exposure governance, offline A/B simulation, MetaSignal export, and failure defense.</p>
+<p><b>Truth boundary:</b> solo-built, non-production, production-simulated. No real production deployment, real users, real traffic, or real online A/B test.</p>
+</div>
+<div class="grid">
+<div class="card"><div class="label">Artifacts</div><div class="value">33</div></div>
+<div class="card"><div class="label">Sessions</div><div class="value">4132</div></div>
+<div class="card"><div class="label">Impressions</div><div class="value">41320</div></div>
+<div class="card"><div class="label">Display Rank</div><div class="value">1.0</div></div>
+<div class="card"><div class="label">Recall@100</div><div class="value">0.68986</div></div>
+<div class="card"><div class="label">IPS NDCG@10</div><div class="value">0.52224</div></div>
+<div class="card"><div class="label">A/B Decision</div><div class="value">HOLD_SIMULATED</div></div>
+<div class="card"><div class="label">Failures</div><div class="value">15</div></div>
+</div>
+<div class="section">
+<h2>Evidence Summary</h2>
+<table>
+<tr><td>Holdout NDCG@10</td><td>0.13341</td></tr>
+<tr><td>Raw NDCG@10</td><td>0.52751</td></tr>
+<tr><td>IPS-weighted NDCG@10</td><td>0.52224</td></tr>
+<tr><td>After seller Gini@10</td><td>0.58228</td></tr>
+<tr><td>After catalog coverage@10</td><td>0.22615</td></tr>
+<tr><td>MetaSignal-compatible events</td><td>15</td></tr>
+</table>
+</div>
+<div class="section">
+<h2>Resume-Safe Claim</h2>
+<div class="code">Built PulseRank, a production-simulated marketplace ranking system with display-rank impression logging, hybrid candidate generation, temporal holdout ranking evaluation, IPS position-bias correction, delayed conversion attribution, seller/category exposure governance, offline A/B simulation, failure recovery scenarios, and reproducible evidence artifacts.</div>
+</div>
+</div>
+</body>
+</html>
