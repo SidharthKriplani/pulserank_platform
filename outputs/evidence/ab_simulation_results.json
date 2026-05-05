@@ -1,0 +1,66 @@
+{
+  "artifact": "pulserank_ab_simulation_results_v1",
+  "status": "pass",
+  "experiment_id": "pulserank_offline_ab_v1",
+  "simulation_type": "offline_temporal_holdout_session_split",
+  "assignment_method": "deterministic_sha256_half_split",
+  "control": {
+    "variant": "control_raw_ranker",
+    "sessions": 640,
+    "top10_impressions": 6400,
+    "converted_sessions": 13,
+    "session_cvr": 0.02031,
+    "revenue": 14728.48,
+    "revenue_per_session": 23.01325,
+    "net_revenue_after_returns": 14728.48,
+    "net_revenue_per_session": 23.01325,
+    "return_rate_on_converted_sessions": 0.0,
+    "seller_gini_at_10": 0.38934,
+    "mean_category_max_share_at_10": 0.88609
+  },
+  "treatment": {
+    "variant": "treatment_governed_rerank",
+    "sessions": 686,
+    "top10_impressions": 6860,
+    "converted_sessions": 11,
+    "session_cvr": 0.01603,
+    "revenue": 18663.87,
+    "revenue_per_session": 27.20681,
+    "net_revenue_after_returns": 17782.26,
+    "net_revenue_per_session": 25.92166,
+    "return_rate_on_converted_sessions": 0.09091,
+    "seller_gini_at_10": 0.54836,
+    "mean_category_max_share_at_10": 0.51327
+  },
+  "primary_metric": "net_revenue_per_session",
+  "primary_metric_lift": {
+    "control": 23.01325,
+    "treatment": 25.92166,
+    "absolute_lift": 2.90841,
+    "relative_lift": 0.12638
+  },
+  "supporting_metric_lifts": {
+    "session_cvr": {
+      "control": 0.02031,
+      "treatment": 0.01603,
+      "absolute_lift": -0.00428,
+      "relative_lift": -0.21059
+    },
+    "revenue_per_session": {
+      "control": 23.01325,
+      "treatment": 27.20681,
+      "absolute_lift": 4.19356,
+      "relative_lift": 0.18222
+    }
+  },
+  "guardrails": {
+    "seller_gini_treatment_lte_0_65": true,
+    "category_max_share_treatment_lte_0_55": true,
+    "return_rate_not_more_than_control_plus_3pp": false,
+    "minimum_treatment_sessions": true
+  },
+  "guardrails_pass": false,
+  "decision": "HOLD_SIMULATED",
+  "interpretation": "Offline A/B simulation is evidence for portfolio demonstration only; it is not an online experiment result.",
+  "evidence_statement": "Compares raw ranking vs governed reranking on temporal holdout sessions using delayed-attribution labels and marketplace guardrails."
+}

@@ -1,0 +1,8 @@
+{
+  "artifact": "pulserank_group6_attribution_ab_report_v1",
+  "status": "pass",
+  "conversion_attribution_report_path": "outputs/evidence/conversion_attribution_report.json",
+  "ab_simulation_results_path": "outputs/evidence/ab_simulation_results.json",
+  "metasignal_integration_events_path": "outputs/evidence/metasignal_integration_events.json",
+  "evidence_statement": "Group 6 attribution and A/B simulation complete with delayed conversion labels, return-adjusted revenue, offline experiment readout, and MetaSignal-compatible event export."
+}

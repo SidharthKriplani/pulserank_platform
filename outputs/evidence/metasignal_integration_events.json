@@ -1,0 +1,109 @@
+{
+  "artifact": "pulserank_metasignal_integration_events_v1",
+  "status": "pass",
+  "event_count": 15,
+  "schema": [
+    "event_id",
+    "source_project",
+    "experiment_id",
+    "variant",
+    "metric_name",
+    "metric_value",
+    "unit_of_analysis",
+    "timestamp",
+    "claim_boundary"
+  ],
+  "data_path": "data/processed/metasignal_integration_events.csv",
+  "compatible_target": "MetaSignal-style experiment metric event ingestion",
+  "claim_boundary": "schema-compatible export only; no live MetaSignal ingestion performed",
+  "events_sample": [
+    {
+      "event_id": "MSIG000001",
+      "source_project": "PulseRank",
+      "experiment_id": "pulserank_offline_ab_v1",
+      "variant": "control_raw_ranker",
+      "metric_name": "session_cvr",
+      "metric_value": 0.02031,
+      "unit_of_analysis": "session",
+      "timestamp": "2026-05-05T00:00:00",
+      "claim_boundary": "offline_simulation_not_online_experiment"
+    },
+    {
+      "event_id": "MSIG000002",
+      "source_project": "PulseRank",
+      "experiment_id": "pulserank_offline_ab_v1",
+      "variant": "control_raw_ranker",
+      "metric_name": "revenue_per_session",
+      "metric_value": 23.01325,
+      "unit_of_analysis": "session",
+      "timestamp": "2026-05-05T00:00:00",
+      "claim_boundary": "offline_simulation_not_online_experiment"
+    },
+    {
+      "event_id": "MSIG000003",
+      "source_project": "PulseRank",
+      "experiment_id": "pulserank_offline_ab_v1",
+      "variant": "control_raw_ranker",
+      "metric_name": "net_revenue_per_session",
+      "metric_value": 23.01325,
+      "unit_of_analysis": "session",
+      "timestamp": "2026-05-05T00:00:00",
+      "claim_boundary": "offline_simulation_not_online_experiment"
+    },
+    {
+      "event_id": "MSIG000004",
+      "source_project": "PulseRank",
+      "experiment_id": "pulserank_offline_ab_v1",
+      "variant": "control_raw_ranker",
+      "metric_name": "return_rate_on_converted_sessions",
+      "metric_value": 0.0,
+      "unit_of_analysis": "session",
+      "timestamp": "2026-05-05T00:00:00",
+      "claim_boundary": "offline_simulation_not_online_experiment"
+    },
+    {
+      "event_id": "MSIG000005",
+      "source_project": "PulseRank",
+      "experiment_id": "pulserank_offline_ab_v1",
+      "variant": "control_raw_ranker",
+      "metric_name": "seller_gini_at_10",
+      "metric_value": 0.38934,
+      "unit_of_analysis": "session",
+      "timestamp": "2026-05-05T00:00:00",
+      "claim_boundary": "offline_simulation_not_online_experiment"
+    },
+    {
+      "event_id": "MSIG000006",
+      "source_project": "PulseRank",
+      "experiment_id": "pulserank_offline_ab_v1",
+      "variant": "control_raw_ranker",
+      "metric_name": "mean_category_max_share_at_10",
+      "metric_value": 0.88609,
+      "unit_of_analysis": "session",
+      "timestamp": "2026-05-05T00:00:00",
+      "claim_boundary": "offline_simulation_not_online_experiment"
+    },
+    {
+      "event_id": "MSIG000007",
+      "source_project": "PulseRank",
+      "experiment_id": "pulserank_offline_ab_v1",
+      "variant": "treatment_governed_rerank",
+      "metric_name": "session_cvr",
+      "metric_value": 0.01603,
+      "unit_of_analysis": "session",
+      "timestamp": "2026-05-05T00:00:00",
+      "claim_boundary": "offline_simulation_not_online_experiment"
+    },
+    {
+      "event_id": "MSIG000008",
+      "source_project": "PulseRank",
+      "experiment_id": "pulserank_offline_ab_v1",
+      "variant": "treatment_governed_rerank",
+      "metric_name": "revenue_per_session",
+      "metric_value": 27.20681,
+      "unit_of_analysis": "session",
+      "timestamp": "2026-05-05T00:00:00",
+      "claim_boundary": "offline_simulation_not_online_experiment"
+    }
+  ]
+}

@@ -1,0 +1,490 @@
+{
+  "artifact": "pulserank_attribution_ab_validation_v1",
+  "status": "pass",
+  "check_count": 43,
+  "passed_count": 43,
+  "checks": [
+    {
+      "name": "exists::data/processed/attributed_label_log_1d.csv",
+      "passed": true,
+      "observed": "data/processed/attributed_label_log_1d.csv"
+    },
+    {
+      "name": "exists::data/processed/attributed_label_log_3d.csv",
+      "passed": true,
+      "observed": "data/processed/attributed_label_log_3d.csv"
+    },
+    {
+      "name": "exists::data/processed/attributed_label_log_7d.csv",
+      "passed": true,
+      "observed": "data/processed/attributed_label_log_7d.csv"
+    },
+    {
+      "name": "exists::data/processed/attributed_label_log_wide.csv",
+      "passed": true,
+      "observed": "data/processed/attributed_label_log_wide.csv"
+    },
+    {
+      "name": "exists::data/processed/ab_assignment_log.csv",
+      "passed": true,
+      "observed": "data/processed/ab_assignment_log.csv"
+    },
+    {
+      "name": "exists::data/processed/metasignal_integration_events.csv",
+      "passed": true,
+      "observed": "data/processed/metasignal_integration_events.csv"
+    },
+    {
+      "name": "exists::outputs/evidence/conversion_attribution_report.json",
+      "passed": true,
+      "observed": "outputs/evidence/conversion_attribution_report.json"
+    },
+    {
+      "name": "exists::outputs/evidence/ab_simulation_results.json",
+      "passed": true,
+      "observed": "outputs/evidence/ab_simulation_results.json"
+    },
+    {
+      "name": "exists::outputs/evidence/metasignal_integration_events.json",
+      "passed": true,
+      "observed": "outputs/evidence/metasignal_integration_events.json"
+    },
+    {
+      "name": "exists::outputs/reports/group6_attribution_ab_report_v1.json",
+      "passed": true,
+      "observed": "outputs/reports/group6_attribution_ab_report_v1.json"
+    },
+    {
+      "name": "attributed_3d_rows_equal_impressions",
+      "passed": true,
+      "observed": {
+        "attr_3d": 41320,
+        "impressions": 41320
+      }
+    },
+    {
+      "name": "wide_rows_equal_impressions",
+      "passed": true,
+      "observed": {
+        "wide": 41320,
+        "impressions": 41320
+      }
+    },
+    {
+      "name": "assignments_positive",
+      "passed": true,
+      "observed": 1326
+    },
+    {
+      "name": "metasignal_rows_positive",
+      "passed": true,
+      "observed": 15
+    },
+    {
+      "name": "wide_column_exists::attributed_purchase_1d",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "window_days",
+        "attributed_purchase",
+        "attribution_lag_hours",
+        "attributed_revenue",
+        "returned",
+        "return_observed_in_window",
+        "net_revenue",
+        "data_gap_flag",
+        "attributed_purchase_1d",
+        "attributed_revenue_1d",
+        "net_revenue_1d",
+        "attributed_purchase_3d",
+        "attributed_revenue_3d",
+        "net_revenue_3d",
+        "attributed_purchase_7d",
+        "attributed_revenue_7d",
+        "net_revenue_7d"
+      ]
+    },
+    {
+      "name": "wide_column_exists::attributed_purchase_3d",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "window_days",
+        "attributed_purchase",
+        "attribution_lag_hours",
+        "attributed_revenue",
+        "returned",
+        "return_observed_in_window",
+        "net_revenue",
+        "data_gap_flag",
+        "attributed_purchase_1d",
+        "attributed_revenue_1d",
+        "net_revenue_1d",
+        "attributed_purchase_3d",
+        "attributed_revenue_3d",
+        "net_revenue_3d",
+        "attributed_purchase_7d",
+        "attributed_revenue_7d",
+        "net_revenue_7d"
+      ]
+    },
+    {
+      "name": "wide_column_exists::attributed_purchase_7d",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "window_days",
+        "attributed_purchase",
+        "attribution_lag_hours",
+        "attributed_revenue",
+        "returned",
+        "return_observed_in_window",
+        "net_revenue",
+        "data_gap_flag",
+        "attributed_purchase_1d",
+        "attributed_revenue_1d",
+        "net_revenue_1d",
+        "attributed_purchase_3d",
+        "attributed_revenue_3d",
+        "net_revenue_3d",
+        "attributed_purchase_7d",
+        "attributed_revenue_7d",
+        "net_revenue_7d"
+      ]
+    },
+    {
+      "name": "wide_column_exists::net_revenue_1d",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "window_days",
+        "attributed_purchase",
+        "attribution_lag_hours",
+        "attributed_revenue",
+        "returned",
+        "return_observed_in_window",
+        "net_revenue",
+        "data_gap_flag",
+        "attributed_purchase_1d",
+        "attributed_revenue_1d",
+        "net_revenue_1d",
+        "attributed_purchase_3d",
+        "attributed_revenue_3d",
+        "net_revenue_3d",
+        "attributed_purchase_7d",
+        "attributed_revenue_7d",
+        "net_revenue_7d"
+      ]
+    },
+    {
+      "name": "wide_column_exists::net_revenue_3d",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "window_days",
+        "attributed_purchase",
+        "attribution_lag_hours",
+        "attributed_revenue",
+        "returned",
+        "return_observed_in_window",
+        "net_revenue",
+        "data_gap_flag",
+        "attributed_purchase_1d",
+        "attributed_revenue_1d",
+        "net_revenue_1d",
+        "attributed_purchase_3d",
+        "attributed_revenue_3d",
+        "net_revenue_3d",
+        "attributed_purchase_7d",
+        "attributed_revenue_7d",
+        "net_revenue_7d"
+      ]
+    },
+    {
+      "name": "wide_column_exists::net_revenue_7d",
+      "passed": true,
+      "observed": [
+        "impression_id",
+        "session_id",
+        "user_id",
+        "item_id",
+        "display_rank",
+        "window_days",
+        "attributed_purchase",
+        "attribution_lag_hours",
+        "attributed_revenue",
+        "returned",
+        "return_observed_in_window",
+        "net_revenue",
+        "data_gap_flag",
+        "attributed_purchase_1d",
+        "attributed_revenue_1d",
+        "net_revenue_1d",
+        "attributed_purchase_3d",
+        "attributed_revenue_3d",
+        "net_revenue_3d",
+        "attributed_purchase_7d",
+        "attributed_revenue_7d",
+        "net_revenue_7d"
+      ]
+    },
+    {
+      "name": "assignments_have_both_variants",
+      "passed": true,
+      "observed": [
+        "control_raw_ranker",
+        "treatment_governed_rerank"
+      ]
+    },
+    {
+      "name": "metasignal_col_exists::event_id",
+      "passed": true,
+      "observed": [
+        "event_id",
+        "source_project",
+        "experiment_id",
+        "variant",
+        "metric_name",
+        "metric_value",
+        "unit_of_analysis",
+        "timestamp",
+        "claim_boundary"
+      ]
+    },
+    {
+      "name": "metasignal_col_exists::source_project",
+      "passed": true,
+      "observed": [
+        "event_id",
+        "source_project",
+        "experiment_id",
+        "variant",
+        "metric_name",
+        "metric_value",
+        "unit_of_analysis",
+        "timestamp",
+        "claim_boundary"
+      ]
+    },
+    {
+      "name": "metasignal_col_exists::experiment_id",
+      "passed": true,
+      "observed": [
+        "event_id",
+        "source_project",
+        "experiment_id",
+        "variant",
+        "metric_name",
+        "metric_value",
+        "unit_of_analysis",
+        "timestamp",
+        "claim_boundary"
+      ]
+    },
+    {
+      "name": "metasignal_col_exists::variant",
+      "passed": true,
+      "observed": [
+        "event_id",
+        "source_project",
+        "experiment_id",
+        "variant",
+        "metric_name",
+        "metric_value",
+        "unit_of_analysis",
+        "timestamp",
+        "claim_boundary"
+      ]
+    },
+    {
+      "name": "metasignal_col_exists::metric_name",
+      "passed": true,
+      "observed": [
+        "event_id",
+        "source_project",
+        "experiment_id",
+        "variant",
+        "metric_name",
+        "metric_value",
+        "unit_of_analysis",
+        "timestamp",
+        "claim_boundary"
+      ]
+    },
+    {
+      "name": "metasignal_col_exists::metric_value",
+      "passed": true,
+      "observed": [
+        "event_id",
+        "source_project",
+        "experiment_id",
+        "variant",
+        "metric_name",
+        "metric_value",
+        "unit_of_analysis",
+        "timestamp",
+        "claim_boundary"
+      ]
+    },
+    {
+      "name": "metasignal_col_exists::unit_of_analysis",
+      "passed": true,
+      "observed": [
+        "event_id",
+        "source_project",
+        "experiment_id",
+        "variant",
+        "metric_name",
+        "metric_value",
+        "unit_of_analysis",
+        "timestamp",
+        "claim_boundary"
+      ]
+    },
+    {
+      "name": "metasignal_col_exists::timestamp",
+      "passed": true,
+      "observed": [
+        "event_id",
+        "source_project",
+        "experiment_id",
+        "variant",
+        "metric_name",
+        "metric_value",
+        "unit_of_analysis",
+        "timestamp",
+        "claim_boundary"
+      ]
+    },
+    {
+      "name": "metasignal_col_exists::claim_boundary",
+      "passed": true,
+      "observed": [
+        "event_id",
+        "source_project",
+        "experiment_id",
+        "variant",
+        "metric_name",
+        "metric_value",
+        "unit_of_analysis",
+        "timestamp",
+        "claim_boundary"
+      ]
+    },
+    {
+      "name": "attribution_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "attribution_windows_1_3_7",
+      "passed": true,
+      "observed": [
+        1,
+        3,
+        7
+      ]
+    },
+    {
+      "name": "attribution_has_window_summaries",
+      "passed": true,
+      "observed": [
+        "1",
+        "3",
+        "7"
+      ]
+    },
+    {
+      "name": "ab_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "ab_has_control_treatment",
+      "passed": true,
+      "observed": [
+        "artifact",
+        "status",
+        "experiment_id",
+        "simulation_type",
+        "assignment_method",
+        "control",
+        "treatment",
+        "primary_metric",
+        "primary_metric_lift",
+        "supporting_metric_lifts",
+        "guardrails",
+        "guardrails_pass",
+        "decision",
+        "interpretation",
+        "evidence_statement"
+      ]
+    },
+    {
+      "name": "ab_primary_metric_net_rps",
+      "passed": true,
+      "observed": "net_revenue_per_session"
+    },
+    {
+      "name": "ab_decision_present",
+      "passed": true,
+      "observed": "HOLD_SIMULATED"
+    },
+    {
+      "name": "ab_guardrails_present",
+      "passed": true,
+      "observed": {
+        "seller_gini_treatment_lte_0_65": true,
+        "category_max_share_treatment_lte_0_55": true,
+        "return_rate_not_more_than_control_plus_3pp": false,
+        "minimum_treatment_sessions": true
+      }
+    },
+    {
+      "name": "ab_has_claim_boundary",
+      "passed": true,
+      "observed": "Offline A/B simulation is evidence for portfolio demonstration only; it is not an online experiment result."
+    },
+    {
+      "name": "msig_status_pass",
+      "passed": true,
+      "observed": "pass"
+    },
+    {
+      "name": "msig_event_count_positive",
+      "passed": true,
+      "observed": 15
+    },
+    {
+      "name": "msig_claim_boundary_present",
+      "passed": true,
+      "observed": "schema-compatible export only; no live MetaSignal ingestion performed"
+    },
+    {
+      "name": "group_status_pass",
+      "passed": true,
+      "observed": "pass"
+    }
+  ],
+  "evidence_statement": "Validates Group 6 delayed attribution windows, return-adjusted revenue, offline A/B simulation, guardrails, and MetaSignal-compatible event export."
+}
