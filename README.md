@@ -143,7 +143,7 @@ outputs/evidence/
 
 ---
 
-## Run Locally
+## Quick Start
 
 ```bash
 git clone https://github.com/sidharthkriplani/pulserank_platform
@@ -160,7 +160,7 @@ open outputs/dashboard/index.html
 
 Full design rationale, architecture decisions, and expected interview questions with answers:
 
-**[docs/defense/PulseRank_Interview_Defense.pdf](docs/defense/PulseRank_Interview_Defense.pdf)**
+**[docs/prd/PulseRank_Interview_Defense_v3.pdf](docs/prd/PulseRank_Interview_Defense_v3.pdf)**
 
 Covers: IPS debiasing mathematics, position-click curve estimation, hybrid candidate generation, exposure governance constraints, delayed attribution window design, offline A/B methodology, and production failure modes.
 
