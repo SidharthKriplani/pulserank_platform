@@ -1,7 +1,5 @@
 # PulseRank Platform
 
-**Production-simulated marketplace recommendation and ranking decision system with IPS bias correction, delayed attribution, exposure governance, offline A/B simulation, and evidence artifacts.**
-
 <p>
   <a href="https://sidharthkriplani.github.io/pulserank_platform/"><img alt="Live Dashboard" src="https://img.shields.io/badge/Live%20Dashboard-GitHub%20Pages-2ea44f?style=for-the-badge&logo=githubpages&logoColor=white"></a>
   <img alt="Status" src="https://img.shields.io/badge/PRD-PASS-22c55e?style=for-the-badge">
@@ -12,72 +10,114 @@
 <p>
   <img alt="Hybrid Recall" src="https://img.shields.io/badge/Hybrid%20Recall%40100-0.690-0ea5e9?style=flat-square">
   <img alt="IPS NDCG" src="https://img.shields.io/badge/IPS%20NDCG%4010-0.522-8b5cf6?style=flat-square">
+  <img alt="Naive NDCG" src="https://img.shields.io/badge/Naive%20NDCG%4010-0.134-ef4444?style=flat-square">
   <img alt="Sessions" src="https://img.shields.io/badge/Sessions-4132-22c55e?style=flat-square">
   <img alt="Artifacts" src="https://img.shields.io/badge/JSON%20Artifacts-33-f97316?style=flat-square">
-  <img alt="Failures" src="https://img.shields.io/badge/Failure%20Scenarios-15-ef4444?style=flat-square">
   <img alt="Python" src="https://img.shields.io/badge/Python-3.11-3776ab?style=flat-square&logo=python&logoColor=white">
 </p>
 
----
-
-## Why PulseRank exists
-
-Offline recommendation metrics lie. A model trained on marketplace click data looks significantly worse than it actually is — because items shown at rank 1 get 8× the click rate of items at rank 10, regardless of quality. Naive NDCG bakes this position bias directly into the evaluation: PulseRank's baseline ranker scores NDCG@10 = 0.134 on biased labels. After IPS correction it scores 0.522 — the same model, 4× better, once you stop penalising it for decisions the display layer made.
-
-PulseRank builds the full pipeline that most recommendation portfolios skip: logging propensity at impression time, estimating position-click curves, applying IPS debiasing, enforcing seller exposure constraints, attributing conversions with a 30-day window, and making a structured A/B decision against a temporal holdout — with every result in a versioned JSON artifact.
+> Production-simulated marketplace ranking system with IPS position-bias correction, hybrid candidate generation, exposure governance, delayed attribution, and offline A/B decisioning — every result backed by a versioned JSON artifact.
 
 ---
 
 ## Architecture
 
-```mermaid
-flowchart TD
-    CORPUS["📦 Synthetic Marketplace Corpus\n90-day deterministic seed\n4132 sessions · 650 items · 41320 impressions\nDisplay-rank logged at impression time"] --> CG
+![](docs/assets/architecture.svg)
 
-    subgraph CG["Candidate Generation  src/pulserank/core/"]
-        POP["Popularity Scorer\nGlobal purchase rate signal"]
-        CB["Content-Based Scorer\nItem feature similarity"]
-        HYB["Hybrid Merge\nRecall@100 = 0.690"]
-    end
+---
 
-    CG --> RB
+## Sample Output
 
-    subgraph RB["Ranking Baseline  src/pulserank/ranking/"]
-        SPLIT["Temporal Train/Test Split\nNo data leakage"]
-        RANK["Baseline Ranker\nHoldout NDCG@10 = 0.134"]
-    end
+![](docs/assets/ranking_decision_sample.svg)
 
-    RB --> IPS
+---
 
-    subgraph IPS["IPS Bias Correction  src/pulserank/evaluation/"]
-        PROP["Propensity Estimator\nPosition-based click model"]
-        CLIP["IPS Weight Clipping\nVariance reduction"]
-        EVAL["Debiased Evaluation\nIPS NDCG@10 = 0.522"]
-    end
+## The Problem
 
-    IPS --> RR
+Offline recommendation metrics lie. A model trained on position-biased click data looks 4× worse than it actually is — items shown at rank 1 receive 8× the clicks of rank-10 items regardless of quality, and naive NDCG bakes that position advantage directly into the score. PulseRank's baseline ranker scores NDCG@10 = 0.134 on biased labels; after IPS correction, the same model scores 0.522. The display layer's decisions were being charged to the model.
 
-    subgraph RR["Reranking Constraints  src/pulserank/ranking/"]
-        MMR["MMR Diversity\nMarginally relevant re-ranking"]
-        GINI["Seller Gini Governance\nGini after rerank = 0.582"]
-        COV["Catalog Coverage\nCoverage@10 = 0.226"]
-    end
+---
 
-    RR --> AB
+## IPS Debiasing
 
-    subgraph AB["Attribution + A/B  src/pulserank/simulation/"]
-        ATTR["Delayed Conversion Attribution\n30-day attribution window"]
-        SIM["Offline A/B Simulation\nControl vs treatment"]
-        DEC["Decision Gate\nHOLD_SIMULATED"]
-    end
+The core technical contribution of PulseRank is treating position bias as a missing-data problem. Every impression is logged with its display rank at serve time. A position-click curve is estimated from the logged data — modeling the probability that a user clicks an item at position `k` given only that it was shown there. These propensity scores are used to reweight the evaluation:
 
-    AB --> OUT
+```
+IPS-NDCG = sum_i (rel_i / propensity_i) / ideal_DCG
+```
 
-    subgraph OUT["Evidence + Observability"]
-        FAIL["15 Failure Scenarios\nRecovery paths documented"]
-        MS["MetaSignal-Compatible Events\n15 structured events"]
-        DASH["GitHub Pages Dashboard\n33 JSON artifacts"]
-    end
+IPS weights are clipped to control variance from low-propensity (low-rank) impressions. The result: NDCG@10 jumps from 0.134 (biased) to 0.522 (corrected) — not a model improvement, but an evaluation correction that removes the penalty for decisions the display layer made.
+
+| Metric | Value |
+|---|---:|
+| Naive NDCG@10 (biased labels) | 0.134 |
+| IPS-corrected NDCG@10 | 0.522 |
+| Relative improvement from debiasing | +289% |
+
+---
+
+## Position-Click Curve
+
+The propensity estimator fits a position-based click model over the 90-day corpus of 41,320 impressions. Estimated click probability by rank follows an approximately log-linear decay — rank 1 receives ~8× the click rate of rank 10, consistent with known position bias in marketplace interfaces. These propensity estimates are stored in `outputs/evidence/propensity_by_rank_report.json`.
+
+---
+
+## Hybrid Candidate Generation
+
+Two complementary scorers produce candidates for each session:
+
+- **Popularity Scorer:** Global purchase-rate signal. Stable, high-coverage, biased toward bestsellers.
+- **Content-Based Scorer:** Item-feature similarity to session context. Better for tail items and fresh inventory.
+
+Candidates are merged into a unified top-100 set. Hybrid Recall@100 = 0.690 — 69% of purchased items appear in the candidate set shown to each session. This recall figure is the ceiling for any ranker built on top.
+
+---
+
+## Exposure Governance
+
+A pure relevance ranker concentrates impressions on high-popularity sellers, starving long-tail inventory of visibility. PulseRank applies three post-ranker constraints:
+
+- **MMR Diversity:** Marginally-relevant re-ranking to increase within-list diversity.
+- **Seller Gini Governance:** Gini coefficient constraint on seller share of impressions. Seller Gini after rerank = 0.582.
+- **Catalog Coverage:** Coverage@10 = 0.226 — 22.6% of catalog items appear in at least one session's top-10.
+
+These are the real-world constraints absent from pure relevance rankers in portfolio projects.
+
+---
+
+## Delayed Attribution
+
+Marketplace purchase intent does not resolve at click time. PulseRank attributes conversions within a 30-day window to the last relevant impression, correctly modeling the delayed decision cycle. 539 purchases are attributed across 4,132 sessions. Attribution reports are in `outputs/evidence/conversion_attribution_report.json`.
+
+---
+
+## A/B Decision Framework
+
+The offline A/B simulation replays control and treatment rankers on a temporally-held-out segment. The split is strictly temporal — no purchase labels from the test period leak into the training data.
+
+Current decision: **HOLD_SIMULATED**. IPS-corrected metrics show improvement, but the relative lift in the holdout does not clear the significance threshold at the current traffic volume. The structured decision artifact in `outputs/evidence/ab_simulation_results.json` logs the decision rationale, effect size, and recommended action.
+
+---
+
+## Evidence Artifacts
+
+```
+outputs/evidence/
+  corpus_summary.json                 corpus statistics and schema validation
+  candidate_generation_report.json    recall@k across popularity + content
+  candidate_recall_report.json        per-session recall breakdown
+  ranking_baseline_report.json        NDCG@10, MRR, hit rate, temporal eval
+  offline_eval_log.json               per-session evaluation log
+  model_registry.json                 versioned model + config snapshot
+  bias_correction_report.json         IPS before/after comparison
+  propensity_by_rank_report.json      propensity estimates per display rank
+  diversity_report.json               MMR, Gini, novelty metrics
+  diversity_guardrail_log.json        per-rerank constraint decisions
+  catalog_coverage_report.json        coverage@k across catalog
+  conversion_attribution_report.json  attributed labels, window analysis
+  ab_simulation_results.json          control vs treatment decision
+  metasignal_integration_events.json  15 structured observability events
+  failure_recovery_report.json        15 failure + recovery scenarios
 ```
 
 ---
@@ -98,56 +138,12 @@ flowchart TD
 | Seller Gini after rerank | 0.582 |
 | Catalog coverage@10 | 0.226 |
 | Offline A/B decision | HOLD_SIMULATED |
-| MetaSignal-compatible events | 15 |
 | Failure scenarios | 15 |
 | JSON evidence artifacts | 33 |
 
-The jump from NDCG@10 = 0.134 to IPS NDCG@10 = 0.522 is the debiasing effect — position-biased click data was making the baseline ranker look worse than it actually was.
-
 ---
 
-## What PulseRank demonstrates
-
-**Display-rank impression logging.** Every impression is logged with its display rank, enabling propensity estimation. This is the foundational requirement for any debiased offline evaluation.
-
-**Hybrid candidate generation.** Popularity and content-based signals are merged into a candidate set. Hybrid Recall@100 = 0.690 means 69% of purchased items appear in the top-100 candidates shown to each session.
-
-**Temporal holdout evaluation.** Train/test split is strictly temporal — no leakage of future purchase labels into training, which is the primary failure mode in recommendation offline eval.
-
-**IPS position-bias correction.** A position-based click model estimates propensity for each display rank. IPS weights are clipped to control variance. The debiased NDCG@10 is 0.522 vs 0.134 naive — the naive metric severely understated quality because high-rank impressions had much higher click probability by position alone.
-
-**Reranking with exposure constraints.** Post-ranker applies MMR for diversity, seller Gini governance to prevent one seller dominating results, and catalog coverage enforcement. These are the real-world constraints missing from pure relevance rankers.
-
-**Delayed conversion attribution.** Purchases within a 30-day window are attributed to the last relevant impression. This is the correct attribution model for marketplace recommendation where purchase intent takes days or weeks to convert.
-
-**Offline A/B simulation.** Control vs treatment replay produces a structured decision. The current decision is HOLD_SIMULATED — the challenger does not show sufficient lift to justify a launch recommendation.
-
-**15 failure scenarios.** Covers cold-start (new items, new users), popularity collapse, attribution window edge cases, Gini constraint violations, and propensity estimation failures. Each has a documented recovery path.
-
----
-
-## Evidence artifacts
-
-```text
-outputs/evidence/
-  corpus_summary.json                 ← corpus statistics and schema validation
-  candidate_generation_report.json    ← recall@k across popularity + content
-  candidate_recall_report.json        ← per-session recall breakdown
-  ranking_baseline_report.json        ← NDCG@10, MRR, hit rate, temporal eval
-  offline_eval_log.json               ← per-session evaluation log
-  model_registry.json                 ← versioned model + config snapshot
-  bias_correction_report.json         ← IPS before/after comparison
-  propensity_by_rank_report.json      ← propensity estimates per display rank
-  diversity_report.json               ← MMR, Gini, novelty metrics
-  diversity_guardrail_log.json        ← per-rerank constraint decisions
-  catalog_coverage_report.json        ← coverage@k across catalog
-  conversion_attribution_report.json  ← attributed labels, window analysis
-  ab_simulation_results.json          ← control vs treatment decision
-  metasignal_integration_events.json  ← 15 structured observability events
-  failure_recovery_report.json        ← 15 failure + recovery scenarios
-```
-
-## Run locally
+## Run Locally
 
 ```bash
 git clone https://github.com/sidharthkriplani/pulserank_platform
@@ -160,16 +156,24 @@ open outputs/dashboard/index.html
 
 ---
 
-## Truth boundary
+## Part of Applied LLM Systems Portfolio
 
-PulseRank is solo-built, non-production, and production-simulated.
+PulseRank is the ranking and recommendation platform in a portfolio of production-simulated ML systems:
 
-It does **not** claim real production deployment, real users served, real online A/B testing, real revenue optimization, real RL or contextual bandits, real ad-auction integration, or real streaming infrastructure.
+- **[LendFlow](https://github.com/SidharthKriplani/lendflow)** — LangGraph-based loan underwriting agent with RAG policy retrieval and audit trail
+- **[AgentReliabilityLab](https://github.com/SidharthKriplani/agentreliabilitylab)** — LLM agent failure taxonomy, retry logic, and structured observability
+- **[NexusSupply](https://github.com/SidharthKriplani/nexussupply)** — Supplier risk intelligence with FinBERT, ESG scoring, and graph-based concentration risk
 
-Every major claim is backed by an executable script and a JSON artifact. The offline A/B decision is explicitly labeled HOLD_SIMULATED to distinguish it from a live experiment result.
+MetaSignal's CUPED and guardrail-first decisioning validate whether NDCG improvements in PulseRank are statistically significant before any algorithm change ships.
 
 ---
 
-## Resume-safe claim
+## Truth Boundary
 
-Built PulseRank, a production-simulated marketplace ranking system with display-rank impression logging, hybrid candidate generation, temporal holdout ranking evaluation, IPS position-bias correction, delayed conversion attribution, seller/category exposure governance, offline A/B simulation, 15 failure recovery scenarios, MetaSignal-compatible event emission, and a GitHub Pages evidence dashboard covering 33 JSON artifacts.
+PulseRank is solo-built, non-production, and production-simulated. It does not claim real deployment, real users, real online A/B testing, real RL or contextual bandits, or real streaming infrastructure. Every major claim is backed by an executable script and a JSON artifact. The offline A/B decision is explicitly labeled HOLD_SIMULATED to distinguish it from a live experiment result.
+
+---
+
+## Resume-Safe Claim
+
+Built PulseRank, a production-simulated marketplace ranking system with display-rank impression logging, hybrid candidate generation, temporal holdout ranking evaluation, IPS position-bias correction (NDCG@10 0.134 → 0.522), delayed conversion attribution, seller/category exposure governance, offline A/B simulation, 15 failure recovery scenarios, MetaSignal-compatible event emission, and a GitHub Pages evidence dashboard covering 33 JSON artifacts.

@@ -1,0 +1,153 @@
+<svg viewBox="0 0 1100 420" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="420" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="550" y="30" text-anchor="middle" fill="#f1f5f9" font-size="15" font-weight="700" letter-spacing="1">PULSERANK PLATFORM — RANKING PIPELINE WITH IPS DEBIASING</text>
+
+  <!-- Node 1: Synthetic Corpus (slate) -->
+  <rect x="20" y="55" width="155" height="90" rx="12" fill="#334155" filter="url(#shadow)"/>
+  <text x="97" y="78" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600" letter-spacing="1">CORPUS</text>
+  <text x="97" y="96" text-anchor="middle" fill="#f1f5f9" font-size="11" font-weight="700">Synthetic Corpus</text>
+  <text x="97" y="112" text-anchor="middle" fill="#cbd5e1" font-size="9">90-day · 4,132 sessions</text>
+  <text x="97" y="126" text-anchor="middle" fill="#cbd5e1" font-size="9">650 items · 41,320 impr.</text>
+  <text x="97" y="140" text-anchor="middle" fill="#94a3b8" font-size="9">rank logged at impression</text>
+
+  <!-- Arrow: Corpus → CandGen -->
+  <line x1="175" y1="100" x2="205" y2="100" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Node 2: Candidate Generation (violet) -->
+  <rect x="205" y="55" width="170" height="90" rx="12" fill="#7c3aed" filter="url(#shadow)"/>
+  <text x="290" y="78" text-anchor="middle" fill="#ddd6fe" font-size="9" font-weight="600" letter-spacing="1">CANDIDATE GEN</text>
+  <text x="290" y="96" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">Hybrid Candidate Gen</text>
+  <text x="290" y="112" text-anchor="middle" fill="#ede9fe" font-size="9">Popularity + Content-Based</text>
+  <text x="290" y="126" text-anchor="middle" fill="#ede9fe" font-size="9">Scorers → Hybrid Merge</text>
+  <text x="290" y="141" text-anchor="middle" fill="#c4b5fd" font-size="10" font-weight="700">Recall@100 = 0.690</text>
+
+  <!-- Arrow: CandGen → IPS (KEY path) -->
+  <line x1="375" y1="100" x2="410" y2="100" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- IPS Debiasing Node — enlarged as centerpiece (blue) -->
+  <rect x="410" y="38" width="225" height="135" rx="12" fill="#1d4ed8" filter="url(#shadow)"/>
+  <!-- Bright border highlight -->
+  <rect x="410" y="38" width="225" height="135" rx="12" fill="none" stroke="#60a5fa" stroke-width="2"/>
+  <text x="522" y="60" text-anchor="middle" fill="#bfdbfe" font-size="9" font-weight="600" letter-spacing="1">IPS DEBIASING — KEY STAGE</text>
+  <text x="522" y="79" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">IPS Bias Correction</text>
+  <text x="522" y="97" text-anchor="middle" fill="#dbeafe" font-size="9">Position-click curve estimation</text>
+  <text x="522" y="112" text-anchor="middle" fill="#dbeafe" font-size="9">Propensity logging at impression time</text>
+  <text x="522" y="127" text-anchor="middle" fill="#dbeafe" font-size="9">IPS weight clipping (variance reduction)</text>
+  <!-- Before/After callout -->
+  <rect x="430" y="136" width="88" height="26" rx="6" fill="#1e3a8a"/>
+  <text x="474" y="148" text-anchor="middle" fill="#fca5a5" font-size="9" font-weight="700">Naive NDCG@10</text>
+  <text x="474" y="160" text-anchor="middle" fill="#f87171" font-size="12" font-weight="700">0.134</text>
+  <text x="527" y="153" text-anchor="middle" fill="#60a5fa" font-size="14" font-weight="700">→</text>
+  <rect x="537" y="136" width="88" height="26" rx="6" fill="#1e3a8a"/>
+  <text x="581" y="148" text-anchor="middle" fill="#86efac" font-size="9" font-weight="700">IPS NDCG@10</text>
+  <text x="581" y="160" text-anchor="middle" fill="#4ade80" font-size="12" font-weight="700">0.522</text>
+
+  <!-- Arrow: IPS → Exposure Gov -->
+  <line x1="635" y1="100" x2="668" y2="100" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Node 4: Exposure Governance (green) -->
+  <rect x="668" y="55" width="160" height="90" rx="12" fill="#065f46" filter="url(#shadow)"/>
+  <text x="748" y="78" text-anchor="middle" fill="#6ee7b7" font-size="9" font-weight="600" letter-spacing="1">GOVERNANCE</text>
+  <text x="748" y="96" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">Exposure Governance</text>
+  <text x="748" y="112" text-anchor="middle" fill="#d1fae5" font-size="9">MMR Diversity Reranking</text>
+  <text x="748" y="126" text-anchor="middle" fill="#d1fae5" font-size="9">Seller Gini Constraints</text>
+  <text x="748" y="141" text-anchor="middle" fill="#a7f3d0" font-size="9">Catalog Coverage@10 = 0.226</text>
+
+  <!-- Arrow: Governance → Attribution -->
+  <line x1="828" y1="100" x2="858" y2="100" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Node 5: Delayed Attribution (amber) -->
+  <rect x="858" y="55" width="145" height="90" rx="12" fill="#92400e" filter="url(#shadow)"/>
+  <text x="930" y="78" text-anchor="middle" fill="#fcd34d" font-size="9" font-weight="600" letter-spacing="1">ATTRIBUTION</text>
+  <text x="930" y="96" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">Delayed Attribution</text>
+  <text x="930" y="112" text-anchor="middle" fill="#fde68a" font-size="9">30-day conversion window</text>
+  <text x="930" y="126" text-anchor="middle" fill="#fde68a" font-size="9">Last-touch impression</text>
+  <text x="930" y="141" text-anchor="middle" fill="#fcd34d" font-size="9">attribution model</text>
+
+  <!-- Arrow: Attribution down to A/B -->
+  <line x1="930" y1="145" x2="930" y2="205" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Node 6: A/B Decision (red) -->
+  <rect x="858" y="205" width="145" height="90" rx="12" fill="#991b1b" filter="url(#shadow)"/>
+  <text x="930" y="228" text-anchor="middle" fill="#fca5a5" font-size="9" font-weight="600" letter-spacing="1">A/B SIMULATION</text>
+  <text x="930" y="246" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">Offline A/B Decision</text>
+  <text x="930" y="262" text-anchor="middle" fill="#fecaca" font-size="9">Temporal holdout split</text>
+  <text x="930" y="276" text-anchor="middle" fill="#fecaca" font-size="9">Control vs. treatment replay</text>
+  <rect x="878" y="281" width="104" height="22" rx="6" fill="#7f1d1d"/>
+  <text x="930" y="296" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700">Decision: HOLD</text>
+
+  <!-- Arrow: A/B → Artifacts -->
+  <line x1="858" y1="250" x2="720" y2="250" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Node 7: Artifacts (gray) -->
+  <rect x="555" y="205" width="165" height="90" rx="12" fill="#374151" filter="url(#shadow)"/>
+  <text x="637" y="228" text-anchor="middle" fill="#9ca3af" font-size="9" font-weight="600" letter-spacing="1">EVIDENCE</text>
+  <text x="637" y="246" text-anchor="middle" fill="#f9fafb" font-size="11" font-weight="700">JSON Artifacts</text>
+  <text x="637" y="262" text-anchor="middle" fill="#d1d5db" font-size="9">33 versioned evidence files</text>
+  <text x="637" y="276" text-anchor="middle" fill="#d1d5db" font-size="9">15 failure scenarios</text>
+  <text x="637" y="291" text-anchor="middle" fill="#9ca3af" font-size="9">MetaSignal-compatible events</text>
+
+  <!-- IPS node also connects down to artifacts with an arrow -->
+  <line x1="522" y1="173" x2="522" y2="205" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <line x1="522" y1="205" x2="580" y2="215" stroke="#475569" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <!-- Governance also connects down to artifacts -->
+  <line x1="748" y1="145" x2="748" y2="185" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 2"/>
+  <line x1="748" y1="185" x2="700" y2="213" stroke="#475569" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <!-- Bottom info bar -->
+  <rect x="0" y="360" width="1100" height="60" fill="#0f172a"/>
+  <line x1="0" y1="360" x2="1100" y2="360" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Bottom metrics -->
+  <text x="55" y="382" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">HYBRID RECALL@100</text>
+  <text x="55" y="400" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="700">0.690</text>
+
+  <line x1="140" y1="368" x2="140" y2="410" stroke="#334155" stroke-width="1"/>
+
+  <text x="230" y="382" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">IPS NDCG@10 (vs NAIVE)</text>
+  <text x="195" y="404" text-anchor="middle" fill="#4ade80" font-size="16" font-weight="700">0.522</text>
+  <text x="235" y="404" text-anchor="middle" fill="#94a3b8" font-size="13">vs</text>
+  <text x="268" y="404" text-anchor="middle" fill="#f87171" font-size="16" font-weight="700">0.134</text>
+
+  <line x1="320" y1="368" x2="320" y2="410" stroke="#334155" stroke-width="1"/>
+
+  <text x="390" y="382" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">SESSIONS</text>
+  <text x="390" y="400" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="700">4,132</text>
+
+  <line x1="460" y1="368" x2="460" y2="410" stroke="#334155" stroke-width="1"/>
+
+  <text x="550" y="382" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">ATTRIBUTION WINDOW</text>
+  <text x="550" y="400" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">30-day</text>
+
+  <line x1="640" y1="368" x2="640" y2="410" stroke="#334155" stroke-width="1"/>
+
+  <text x="720" y="382" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">JSON ARTIFACTS</text>
+  <text x="720" y="400" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="700">33</text>
+
+  <line x1="800" y1="368" x2="800" y2="410" stroke="#334155" stroke-width="1"/>
+
+  <text x="880" y="382" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">A/B DECISION</text>
+  <text x="880" y="400" text-anchor="middle" fill="#fbbf24" font-size="14" font-weight="700">HOLD</text>
+
+  <line x1="960" y1="368" x2="960" y2="410" stroke="#334155" stroke-width="1"/>
+
+  <text x="1035" y="388" text-anchor="middle" fill="#475569" font-size="8">github.com/SidharthKriplani/</text>
+  <text x="1035" y="402" text-anchor="middle" fill="#475569" font-size="8">pulserank_platform</text>
+</svg>
