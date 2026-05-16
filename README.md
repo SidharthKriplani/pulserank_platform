@@ -156,15 +156,27 @@ open outputs/dashboard/index.html
 
 ---
 
+## Interview Defense
+
+Full design rationale, architecture decisions, and expected interview questions with answers:
+
+**[docs/defense/PulseRank_Interview_Defense.pdf](docs/defense/PulseRank_Interview_Defense.pdf)**
+
+Covers: IPS debiasing mathematics, position-click curve estimation, hybrid candidate generation, exposure governance constraints, delayed attribution window design, offline A/B methodology, and production failure modes.
+
+---
+
 ## Part of Applied LLM Systems Portfolio
 
-PulseRank is the ranking and recommendation platform in a portfolio of production-simulated ML systems:
+This project is part of a portfolio targeting Applied LLM Systems Engineer roles.
 
-- **[LendFlow](https://github.com/SidharthKriplani/lendflow)** — LangGraph-based loan underwriting agent with RAG policy retrieval and audit trail
-- **[AgentReliabilityLab](https://github.com/SidharthKriplani/agentreliabilitylab)** — LLM agent failure taxonomy, retry logic, and structured observability
-- **[NexusSupply](https://github.com/SidharthKriplani/nexussupply)** — Supplier risk intelligence with FinBERT, ESG scoring, and graph-based concentration risk
-
-MetaSignal's CUPED and guardrail-first decisioning validate whether NDCG improvements in PulseRank are statistically significant before any algorithm change ships.
+- [**NexusSupply**](https://github.com/SidharthKriplani/nexussupply) — Supplier Risk Intelligence Platform (LangGraph + FinBERT + XGBoost + Instructor + NetworkX)
+- [**LendFlow**](https://github.com/SidharthKriplani/lendflow) — AI-powered loan underwriting pipeline (LangGraph + RAG + FOIR rules engine)
+- [**AgentReliabilityLab**](https://github.com/SidharthKriplani/agentreliabilitylab) — Cyber threat triage agent (LangGraph + hybrid RAG + HITL + RAGAS eval)
+- [**RiskFrame Platform**](https://github.com/SidharthKriplani/riskframe_platform) — ML model lifecycle (XGBoost + LightGBM champion/challenger, Optuna HPO, drift monitoring)
+- [**DevPulse Platform**](https://github.com/SidharthKriplani/devpulse_platform) — Version-safe RAG migration intelligence (LLM-Last principle, conflict detection)
+- [**PulseRank Platform**](https://github.com/SidharthKriplani/pulserank_platform) — Marketplace ranking with IPS debiasing (position bias correction, delayed attribution)
+- [**MetaSignal Platform**](https://github.com/SidharthKriplani/metasignal_platform) — Experimentation intelligence (CUPED + guardrail-first + A/A calibration)
 
 ---
 
