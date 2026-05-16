@@ -180,6 +180,25 @@ This project is part of a portfolio targeting Applied LLM Systems Engineer roles
 
 ---
 
+## Scope & Production Gaps
+
+PulseRank is a production-simulated ranking system. The following table makes explicit what is and isn't implemented — so every claim is defensible in an interview.
+
+| Capability | Status | Notes |
+|-----------|--------|-------|
+| IPS position-bias debiasing | ✅ Implemented | Click × (1/propensity(rank)), clip max_weight=5.0 |
+| MMR diversity reranking | ✅ Implemented | λ=0.70, max_per_seller=2, category_cap=50% |
+| Delayed attribution window | ✅ Implemented | Configurable attribution window with holdout |
+| Offline A/B simulation | ✅ Implemented | 4,132 sessions, 15 failure scenarios, HOLD_SIMULATED verdict |
+| Exposure governance | ✅ Implemented | Seller Gini + category concentration constraints |
+| Online A/B testing | ❌ Not implemented | No real traffic; requires production infrastructure |
+| Contextual bandits / RL | ❌ Not implemented | Explicit scope boundary — would require live feedback loop |
+| Real marketplace data | ❌ Not implemented | All data is synthetic (seeded, reproducible) |
+| Live streaming infrastructure | ❌ Not implemented | Event emission is simulated; no Kafka/Kinesis |
+| Real seller/buyer users | ❌ Not implemented | 650 synthetic items, 80 synthetic sellers |
+
+The offline A/B decision is explicitly labeled `HOLD_SIMULATED` to distinguish it from a live experiment result. Every major metric is backed by an executable script and a JSON artifact — 33 artifacts total across the evidence dashboard.
+
 ## Truth Boundary
 
 PulseRank is solo-built, non-production, and production-simulated. It does not claim real deployment, real users, real online A/B testing, real RL or contextual bandits, or real streaming infrastructure. Every major claim is backed by an executable script and a JSON artifact. The offline A/B decision is explicitly labeled HOLD_SIMULATED to distinguish it from a live experiment result.

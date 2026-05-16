@@ -22,3 +22,5 @@ jobs:
         run: python scripts/validate_bias_correction_v1.py
       - name: Run artifact smoke tests
         run: pytest tests/test_artifacts.py -v
+      - name: Run ranking math unit tests
+        run: PYTHONPATH=. pytest tests/test_ranking_math.py -v
